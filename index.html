@@ -1834,26 +1834,39 @@
             display: flex;
             flex-direction: column;
             gap: var(--spacing-20);
-            /* 20px */
+            /* 20px gap between items */
+        }
+
+        .faq-items {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-20);
+            /* 20px gap - Exact Figma */
         }
 
         .faq-item,
         .accordion-item {
             background-color: rgba(27, 26, 62, 0.1);
             /* Exact Figma */
-            border-radius: var(--spacing-20);
+            border-radius: var(--spacing-20) !important;
             /* 20px - Exact Figma */
-            border: none;
-            /* Remove Bootstrap border */
-            margin-bottom: var(--spacing-20);
-            /* 20px gap - Exact Figma */
+            border: 1px solid rgba(27, 26, 62, 0.08) !important;
+            /* Subtle border - Figma style */
+            margin-bottom: 0 !important;
+            /* Remove margin, use gap instead */
             overflow: hidden;
             /* Contain rounded corners */
+        }
+
+        .faq-item:last-child,
+        .accordion-item:last-child {
+            margin-bottom: 0 !important;
         }
 
         .faq-item:hover,
         .accordion-item:hover {
             background-color: rgba(27, 26, 62, 0.15);
+            border-color: rgba(27, 26, 62, 0.12);
         }
 
         .accordion-button {
@@ -1861,6 +1874,8 @@
             /* Match parent background */
             border: none !important;
             /* Remove Bootstrap border */
+            border-radius: var(--spacing-20) !important;
+            /* Match parent */
             padding: 27px 36px !important;
             /* 27px 36px - Exact Figma */
             min-height: 94px;
@@ -1885,11 +1900,14 @@
             box-shadow: none !important;
             /* Remove focus shadow */
             border: none !important;
+            outline: none !important;
         }
 
         .accordion-button:not(.collapsed) {
             background-color: transparent !important;
             color: var(--color-primary-navy) !important;
+            border-radius: var(--spacing-20) var(--spacing-20) 0 0 !important;
+            /* Round only top when expanded */
         }
 
         .accordion-button::after {
@@ -1908,7 +1926,7 @@
         }
 
         .accordion-body {
-            padding: 0 36px 27px 36px;
+            padding: 0 36px 27px 36px !important;
             /* Match left/right padding, add bottom padding */
             font-size: var(--font-size-paragraph);
             /* 16px */
@@ -1918,11 +1936,19 @@
             /* 24px */
             color: var(--color-primary-navy);
             /* #010028 */
+            background-color: transparent !important;
         }
 
         .accordion-collapse {
             border: none !important;
             /* Remove Bootstrap border */
+            background-color: transparent !important;
+        }
+
+        .accordion-header {
+            margin-bottom: 0 !important;
+            /* Remove Bootstrap margin */
+            border: none !important;
         }
 
         .faq-question {
@@ -2040,9 +2066,13 @@
            ======================================== */
 
         .final-cta-section {
-            background-color: #173264;
-            /* Darker navy - Exact Figma */
-            color: var(--color-white);
+            background-color: var(--color-white);
+            /* White background - Exact Figma */
+            color: var(--color-dark-text);
+            /* Dark text on white background */
+            padding: var(--spacing-80) 0;
+            /* 80px vertical padding */
+            position: relative;
         }
 
         .cta-images-grid {
@@ -2050,12 +2080,13 @@
             grid-template-columns: repeat(2, 1fr);
             gap: var(--spacing-20);
             /* 20px - Exact Figma */
-            margin-bottom: var(--spacing-40);
+            margin-bottom: var(--spacing-20);
+            /* 20px gap to badge */
         }
 
         .cta-image-item {
             border-radius: var(--spacing-20);
-            /* 20px - CORRECTED from 8px */
+            /* 20px - Exact Figma */
             overflow: hidden;
             position: relative;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
@@ -2082,25 +2113,49 @@
             /* 16px */
             font-weight: var(--font-weight-semibold);
             /* 600 */
-            margin-bottom: var(--spacing-20);
+            line-height: var(--line-height-paragraph);
+            /* 24px */
         }
 
         .cta-content h2 {
-            color: var(--color-white);
-            margin-bottom: var(--spacing-md);
+            color: var(--color-primary-navy);
+            /* #010028 - Dark text on white */
+            font-size: var(--font-size-h2);
+            /* 52px - Exact Figma */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: normal;
+            /* Exact Figma */
+            margin-bottom: var(--spacing-20);
+            /* 20px */
         }
 
         .cta-content p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 18px;
-            margin-bottom: var(--spacing-lg);
+            color: var(--color-primary-navy);
+            /* #010028 - Dark text on white */
+            font-size: var(--font-size-main-text);
+            /* 20px - Exact Figma */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-main);
+            /* 28px */
+            margin-bottom: var(--spacing-32);
+            /* 32px */
         }
 
         .cta-secondary-link {
-            color: var(--color-white);
+            color: var(--color-primary-navy);
+            /* Dark text on white */
             text-decoration: underline;
-            margin-top: var(--spacing-sm);
+            margin-top: var(--spacing-20);
+            /* 20px */
             display: inline-block;
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-main);
+            /* 28px */
         }
 
         .cta-secondary-link:hover {
@@ -2114,33 +2169,52 @@
         }
 
         /* ========================================
-           FOOTER SECTION
+           FOOTER SECTION - EXACT Figma Specs
            ======================================== */
 
         .footer {
             background-color: var(--color-primary-navy);
+            /* #010028 */
             color: var(--color-white);
-            padding: var(--spacing-xl) 0 var(--spacing-md);
+            padding: var(--spacing-80) 0 var(--spacing-40);
+            /* 80px top, 40px bottom */
+            position: relative;
+            border-radius: 50% 50% 0 0 / 100px 100px 0 0;
+            /* Creates curved top border - Exact Figma */
         }
 
         .footer h5 {
             color: var(--color-white);
-            margin-bottom: var(--spacing-md);
-            font-size: 18px;
+            margin-bottom: var(--spacing-20);
+            /* 20px */
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 */
+            line-height: normal;
         }
 
         .footer-links {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: var(--spacing-12);
+            /* 12px */
         }
 
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
-            transition: var(--transition-base);
+            font-size: var(--font-size-paragraph);
+            /* 16px */
+            font-weight: var(--font-weight-regular);
+            /* 400 */
+            line-height: var(--line-height-paragraph);
+            /* 24px */
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
@@ -2149,8 +2223,10 @@
 
         .footer-social {
             display: flex;
-            gap: var(--spacing-sm);
-            margin-top: var(--spacing-md);
+            gap: var(--spacing-16);
+            /* 16px */
+            margin-top: var(--spacing-20);
+            /* 20px */
         }
 
         .footer-social a {
