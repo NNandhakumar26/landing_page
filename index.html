@@ -85,11 +85,15 @@
 
             /* Spacing - EXACT from Figma */
             --spacing-8: 8px;
+            --spacing-10: 10px;
             --spacing-12: 12px;
             --spacing-16: 16px;
             --spacing-20: 20px;
+            --spacing-22: 22px;
+            --spacing-27: 27px;
             --spacing-28: 28px;
             --spacing-32: 32px;
+            --spacing-33: 33px;
             --spacing-40: 40px;
             --spacing-60: 60px;
             --spacing-80: 80px;
@@ -129,8 +133,108 @@
             font-size: var(--font-size-paragraph);
             line-height: var(--line-height-paragraph);
             color: var(--color-dark-text);
-            background-color: var(--color-white);
+            /* Very light background matching Figma */
+            background-color: #FAFBFF;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Figma-accurate gradient overlays - soft lavender circular gradients */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 5%;
+            left: 10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle,
+                rgba(200, 180, 255, 0.25) 0%,
+                rgba(200, 180, 255, 0.12) 25%,
+                rgba(200, 180, 255, 0.05) 50%,
+                transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(60px);
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 10%;
+            right: 5%;
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle,
+                rgba(190, 210, 255, 0.3) 0%,
+                rgba(190, 210, 255, 0.15) 25%,
+                rgba(190, 210, 255, 0.08) 50%,
+                transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(80px);
+        }
+
+        /* Additional gradient orbs for depth - extending further down */
+        main::before {
+            content: '';
+            position: fixed;
+            top: 40%;
+            right: 15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle,
+                rgba(220, 190, 255, 0.2) 0%,
+                rgba(220, 190, 255, 0.1) 30%,
+                transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(70px);
+        }
+
+        /* Additional gradient orb - lower section */
+        .problem-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: 5%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle,
+                rgba(210, 180, 255, 0.25) 0%,
+                rgba(210, 180, 255, 0.12) 25%,
+                rgba(210, 180, 255, 0.05) 50%,
+                transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(80px);
+        }
+
+        /* Product intro gradient orb */
+        .product-intro-section {
+            position: relative;
+        }
+
+        .product-intro-section::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 750px;
+            height: 750px;
+            background: radial-gradient(circle,
+                rgba(180, 200, 255, 0.28) 0%,
+                rgba(180, 200, 255, 0.14) 25%,
+                rgba(180, 200, 255, 0.06) 50%,
+                transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(90px);
+        }
+
+        /* Ensure content appears above gradient overlays */
+        nav, section, footer {
+            position: relative;
+            z-index: 1;
         }
 
         /* Typography - EXACT Figma Specs */
@@ -373,16 +477,16 @@
             background-color: transparent;
             /* Outer section has no background */
             position: relative;
-            padding: var(--spacing-40) var(--container-padding);
-            /* 40px top/bottom, 120px sides */
+            padding: var(--spacing-40) var(--spacing-40);
+            /* 40px all sides - reduced for more width */
         }
 
         .hero-container {
-            background: radial-gradient(ellipse at 30% 50%, rgba(0, 135, 180, 1) 0%, rgba(0, 127, 171, 1) 14.5%, rgba(1, 102, 144, 1) 52.6%, rgba(1, 76, 113, 1) 76.3%, rgba(0, 50, 82, 1) 100%);
+            background: radial-gradient(ellipse at 30% 50%, rgba(0, 135, 180, 1) 0%, rgba(0, 127, 171, 1) 14.5%, rgba(1, 102, 144, 1) 52.6%, rgba(1, 76, 113, 1) 76.3%, rgba(0, 50, 82, 1) 100%) !important;
             border-radius: var(--border-radius-lg);
             /* 16px rounded corners */
-            padding: var(--spacing-100) var(--container-padding) var(--spacing-40);
-            /* 100px top, 120px sides, 40px bottom */
+            padding: var(--spacing-80) var(--spacing-80) var(--spacing-40);
+            /* 80px top, 80px sides, 40px bottom */
             position: relative;
             overflow: hidden;
             min-height: 624px;
@@ -474,119 +578,229 @@
         }
 
         /* ========================================
-           PROBLEM STATEMENT SECTION
+           PROBLEM STATEMENT SECTION - EXACT Figma Specs
            ======================================== */
 
         .problem-section {
-            background-color: var(--color-light-gray);
+            background-color: var(--color-white);
+            padding: var(--spacing-40) 0;
+            /* Remove horizontal padding for full width */
         }
 
         .problem-section h2 {
             text-align: center;
-            color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-sm);
+            color: var(--color-dark-text);
+            /* #010028 */
+            font-size: var(--font-size-h2);
+            /* 52px */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: var(--line-height-heading);
+            /* 1 (100%) */
+            margin-bottom: var(--spacing-20);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 var(--spacing-120);
+            /* Add padding for headings */
         }
 
         .problem-section .subheading {
             text-align: center;
-            color: var(--color-gray-text);
-            font-size: 20px;
-            margin-bottom: var(--spacing-lg);
+            color: var(--color-dark-text);
+            /* #010028 */
+            font-size: var(--font-size-h4);
+            /* 28px - CORRECTED FROM 20px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 - CORRECTED FROM 500 */
+            line-height: var(--line-height-heading);
+            /* 1 */
+            margin-bottom: var(--spacing-20);
+            padding: 0 var(--spacing-120);
+            /* Add padding for subheading */
         }
 
+        /* Horizontal scrolling container - full width, no scrollbar */
         .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
+            display: flex;
+            /* CHANGED FROM GRID TO FLEX for horizontal layout */
+            gap: var(--spacing-8);
+            /* 8px gap */
+            overflow-x: auto;
+            /* Enable horizontal scrolling */
+            margin-bottom: var(--spacing-20);
+            padding-bottom: var(--spacing-8);
+            /* Hide scrollbar but keep functionality */
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE/Edge */
+            max-width: 100%;
+        }
+
+        /* Hide scrollbar for Chrome, Safari, and Opera */
+        .problem-grid::-webkit-scrollbar {
+            display: none;
         }
 
         .problem-item {
-            background-color: var(--color-white);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius-sm);
+            background-color: rgba(0, 138, 237, 0.16);
+            padding: var(--spacing-16) var(--spacing-28);
+            /* 16px vertical, 28px horizontal */
+            border-radius: var(--spacing-8);
             display: flex;
             align-items: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            justify-content: center;
+            flex-shrink: 0;
+            /* Prevent shrinking - keeps items in single line */
+            white-space: nowrap;
+            /* Prevent text wrapping */
         }
 
-        .problem-item i {
-            color: var(--color-warning);
-            font-size: 24px;
-            margin-right: var(--spacing-sm);
-            flex-shrink: 0;
+        .problem-item span {
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-main);
+            /* 28px */
+            color: var(--color-dark-text);
         }
 
         .closing-statement {
             text-align: center;
-            font-size: 18px;
-            color: var(--color-dark-text);
-            max-width: 900px;
+            font-size: var(--font-size-h4);
+            /* 28px - CORRECTED FROM 20px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 - CORRECTED FROM 500 */
+            line-height: var(--line-height-heading);
+            /* 1 */
+            color: var(--color-secondary-dark);
+            /* #1B1A3E - CORRECTED COLOR */
+            max-width: 1200px;
             margin: 0 auto;
-            font-weight: 500;
+            padding: 0 var(--spacing-120);
+            /* Add padding for closing statement */
+        }
+
+        @media (max-width: 768px) {
+            .problem-section {
+                padding: var(--spacing-40) var(--spacing-20);
+            }
         }
 
         /* ========================================
-           PRODUCT INTRODUCTION SECTION
+           PRODUCT INTRODUCTION SECTION - EXACT Figma Specs
            ======================================== */
 
         .product-intro-section {
             background-color: var(--color-white);
+            padding: var(--spacing-120) var(--spacing-100);
+            /* 120px vertical, 100px horizontal */
         }
 
         .product-image-container {
             position: relative;
+            width: 516px;
+            height: 670px;
         }
 
         .product-image-frame {
             border-radius: var(--border-radius-md);
             overflow: hidden;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
         }
 
         .product-intro-content {
-            padding-left: var(--spacing-lg);
+            padding-left: var(--spacing-40);
         }
 
+        /* Gradient text for "Meet FullGuard™" */
         .product-eyebrow {
-            font-size: 20px;
-            color: var(--color-primary-blue);
-            font-weight: 600;
-            margin-bottom: var(--spacing-xs);
+            font-size: var(--font-size-h2);
+            /* 52px */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: var(--line-height-heading);
+            /* 1 */
+            margin-bottom: var(--spacing-8);
+            background: linear-gradient(140.424deg, #0295FF 4.08%, #AD85FF 49.729%, #08FFE1 97.72%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            /* Fallback with opacity */
+            color: rgba(1, 0, 40, 0.5);
         }
 
         .product-headline {
-            color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-h2);
+            /* 52px */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: var(--line-height-heading);
+            /* 1 */
+            color: var(--color-dark-text);
+            /* #010028 */
+            margin-bottom: var(--spacing-20);
+            max-width: 669px;
         }
 
         .product-description {
-            color: var(--color-gray-text);
-            margin-bottom: var(--spacing-md);
-            font-size: 18px;
+            font-size: var(--font-size-h4);
+            /* 28px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 */
+            line-height: normal;
+            /* normal ~1.2-1.3 - Figma spec */
+            color: var(--color-secondary-dark);
+            /* #1B1A3E */
+            margin-bottom: var(--spacing-20);
         }
 
         .product-features-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: var(--spacing-md);
+            list-style: disc;
+            padding-left: 30px;
+            margin-bottom: var(--spacing-20);
+            color: var(--color-secondary-dark);
+            /* #1B1A3E */
         }
 
         .product-features-list li {
-            padding: 12px 0;
-            color: var(--color-dark-text);
-            font-weight: 500;
-            position: relative;
-            padding-left: 32px;
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-main);
+            /* 28px = 1.4 for 20px font - CORRECT */
+            padding: 0;
+            margin-bottom: var(--spacing-20);
         }
 
-        .product-features-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--color-success);
-            font-weight: 700;
-            font-size: 20px;
+        .product-closing {
+            font-size: var(--font-size-h4);
+            /* 28px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 */
+            line-height: normal;
+            /* normal ~1.2-1.3 - Figma spec */
+            color: var(--color-secondary-dark);
+            /* #1B1A3E */
+            margin-bottom: var(--spacing-20);
+        }
+
+        @media (max-width: 991px) {
+            .product-intro-section {
+                padding: var(--spacing-60) var(--spacing-20);
+            }
+
+            .product-image-container {
+                width: 100%;
+                height: auto;
+                margin-bottom: var(--spacing-40);
+            }
+
+            .product-intro-content {
+                padding-left: 0;
+            }
         }
 
         @media (max-width: 991px) {
@@ -597,340 +811,746 @@
         }
 
         /* ========================================
-           FEATURES SECTION
+           FEATURES SECTION - EXACT Figma Specs
+           CRITICAL: Dark background with gradient cards, 2-line heading
            ======================================== */
 
         .features-section {
-            background-color: var(--color-light-gray);
+            background-color: var(--color-secondary-dark);
+            /* #1B1A3E - Dark background per Figma */
+            padding: var(--spacing-80) var(--spacing-120);
+            /* 80px vertical, 120px horizontal - EXACT Figma */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-40);
+            /* 40px gap between header and cards */
+        }
+
+        .features-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-20);
+            /* 20px gap between title and subtitle */
+            text-align: center;
         }
 
         .features-section h2 {
-            text-align: center;
-            color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-sm);
+            color: var(--color-white);
+            /* White text on dark background */
+            font-size: var(--font-size-h2);
+            /* 52px */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: var(--line-height-heading);
+            /* 1 (100%) */
+            margin: 0;
+            max-width: 794px;
+            /* Exact Figma width for 2-line wrap */
         }
 
         .features-section .subheading {
-            text-align: center;
-            color: var(--color-gray-text);
-            font-size: 20px;
-            margin-bottom: var(--spacing-xl);
+            color: var(--color-white);
+            /* White text */
+            font-size: var(--font-size-h4);
+            /* 28px - CORRECTED from 20px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 - CORRECTED from 500 */
+            line-height: var(--line-height-heading);
+            /* 1 */
+            margin: 0;
         }
 
+        /* Container for cards - exact 968px width */
         .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: var(--spacing-lg);
+            display: flex;
+            gap: var(--spacing-12);
+            /* 12px gap between columns */
+            max-width: 968px;
+            /* Exact Figma width */
+            width: 100%;
         }
 
-        @media (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
+        /* Column layout - 2 columns */
+        .features-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-12);
+            /* 12px gap between cards */
         }
 
         .feature-item {
+            background: linear-gradient(to bottom, rgba(173, 133, 255, 0.05) 0.552%, rgba(2, 149, 255, 0.05) 99.448%);
+            /* Gradient background from Figma */
+            padding: var(--spacing-20);
+            /* 20px */
+            border-radius: var(--spacing-12);
+            /* 12px */
+            box-shadow: 0px 4px 31.5px 0px rgba(0, 0, 0, 0.12);
+            /* Exact Figma shadow */
             display: flex;
-            gap: var(--spacing-sm);
+            gap: var(--spacing-12);
+            /* 12px gap between icon and content */
         }
 
         .feature-icon {
             flex-shrink: 0;
+            width: 49.48px;
+            height: 49.48px;
+            /* Exact Figma size */
+        }
+
+        .feature-icon i {
+            font-size: 32px;
+            color: var(--color-white);
+        }
+
+        .feature-content {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            /* 5px gap between title and description - Figma spec */
+            flex: 1;
         }
 
         .feature-content h4 {
-            color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-xs);
-            font-size: 20px;
-        }
-
-        .feature-content p {
-            color: var(--color-gray-text);
+            color: var(--color-white);
+            /* White text */
+            font-size: var(--font-size-main-text);
+            /* 20px - CORRECTED from 28px */
+            font-weight: var(--font-weight-medium);
+            /* 500 - CORRECTED from 600 */
+            line-height: var(--line-height-main);
+            /* 28px */
             margin: 0;
         }
 
+        .feature-content p {
+            color: var(--color-white);
+            /* White text */
+            font-size: var(--font-size-paragraph);
+            /* 16px */
+            font-weight: var(--font-weight-regular);
+            /* 400 */
+            line-height: var(--line-height-paragraph);
+            /* 24px */
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .features-section {
+                padding: var(--spacing-60) var(--spacing-40);
+            }
+
+            .features-grid {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-section {
+                padding: var(--spacing-40) var(--spacing-20);
+            }
+
+            .features-grid {
+                flex-direction: column;
+            }
+
+            .features-section h2 {
+                font-size: 36px;
+                max-width: 100%;
+            }
+        }
+
         /* ========================================
-           BENEFITS SECTION
+           BENEFITS SECTION - EXACT Figma Specs
            ======================================== */
 
         .benefits-section {
             background-color: var(--color-white);
+            padding: var(--spacing-60) var(--spacing-100);
+            /* 60px 100px */
             position: relative;
         }
 
         .benefits-section h2 {
             text-align: center;
-            color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-xl);
+            color: var(--color-dark-text);
+            /* #010028 */
+            font-size: var(--font-size-h2);
+            /* 52px */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: var(--line-height-heading);
+            /* 1 */
+            margin-bottom: var(--spacing-20);
         }
 
         .benefits-container {
             position: relative;
-            max-width: 1000px;
+            height: 584px;
+            max-width: 1240px;
             margin: 0 auto;
         }
 
+        /* Central image with gradient overlays */
         .benefits-center-image {
-            text-align: center;
-            margin: 0 auto var(--spacing-lg);
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 371.64px;
+            height: 584px;
+        }
+
+        /* Gradient overlay behind image */
+        .benefits-center-image::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 468.449px;
+            opacity: 0.5;
+            background: radial-gradient(ellipse at center,
+                    rgba(2, 149, 255, 0.5) 0%,
+                    rgba(23, 147, 255, 0.5) 6%,
+                    rgba(45, 145, 255, 0.5) 12%,
+                    rgba(88, 141, 255, 0.5) 24%,
+                    rgba(173, 133, 255, 0.5) 49%,
+                    rgba(91, 194, 240, 0.25) 74%,
+                    rgba(8, 255, 225, 0) 100%);
+            z-index: 1;
+        }
+
+        /* Inner gradient overlay */
+        .benefits-center-image::after {
+            content: '';
+            position: absolute;
+            left: 41.38px;
+            top: 47.63px;
+            width: 288.877px;
+            height: 489.529px;
+            border-radius: 468.449px;
+            opacity: 0.8;
+            background: radial-gradient(ellipse at center,
+                    rgba(2, 149, 255, 0.8) 0%,
+                    rgba(23, 147, 255, 0.76) 6%,
+                    rgba(45, 145, 255, 0.73) 12%,
+                    rgba(88, 141, 255, 0.65) 24%,
+                    rgba(130, 137, 255, 0.58) 37%,
+                    rgba(173, 133, 255, 0.5) 49%,
+                    rgba(91, 194, 240, 0.25) 74%,
+                    rgba(8, 255, 225, 0) 100%);
+            z-index: 2;
         }
 
         .benefits-center-image img {
-            max-width: 400px;
-            border-radius: var(--border-radius-lg);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
-            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+            width: 336px;
+            height: 488px;
+            object-fit: cover;
+            margin-left: 17.82px;
+            margin-top: 68px;
         }
 
+        /* Glassmorphism benefit cards - absolute positioning */
         .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-lg);
+            position: relative;
+            height: 100%;
         }
 
         .benefit-card {
-            background-color: var(--color-light-gray);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius-md);
+            position: absolute;
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+            background: rgba(27, 26, 62, 0.08);
+            border: 1px solid white;
+            border-radius: var(--spacing-32);
+            /* 32px */
+            padding: var(--spacing-20);
+            /* 20px */
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-8);
+            /* 8px */
+        }
+
+        /* Card positions from Figma */
+        .benefit-card:nth-child(1) {
+            /* Credibility */
+            left: 83px;
+            top: 266px;
+            width: 340px;
+        }
+
+        .benefit-card:nth-child(2) {
+            /* Confidence */
+            left: 768px;
+            top: 83px;
+            width: 340px;
+        }
+
+        .benefit-card:nth-child(3) {
+            /* Comfort */
+            left: 680px;
+            top: 381px;
+            width: 340px;
         }
 
         .benefit-card h4 {
-            color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-h4);
+            /* 28px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 */
+            line-height: var(--line-height-heading);
+            /* 1 */
+            color: var(--color-dark-text);
+            /* #010028 */
+            margin: 0;
         }
 
         .benefit-card p {
-            color: var(--color-gray-text);
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-main);
+            /* 1.4 */
+            color: var(--color-secondary-dark);
+            /* #1B1A3E */
             margin: 0;
+            width: 300px;
         }
 
         .benefits-closing {
             text-align: center;
-            font-size: 18px;
-            color: var(--color-dark-text);
-            max-width: 900px;
-            margin: 0 auto var(--spacing-md);
+            font-size: var(--font-size-h4);
+            /* 28px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 */
+            line-height: normal;
+            /* Natural line height for better readability */
+            color: var(--color-secondary-dark);
+            /* #1B1A3E */
+            max-width: 1240px;
+            margin: var(--spacing-20) auto;
         }
 
         .benefits-cta {
             text-align: center;
         }
 
-        /* Decorative stars */
+        /* Decorative stars - exact Figma positions */
         .star-decoration {
             position: absolute;
-            color: #ffd700;
-            font-size: 48px;
-            opacity: 0.6;
+            width: 72px;
+            height: 72px;
+            z-index: 10;
+        }
+
+        .star-decoration.star-small {
+            width: 60px;
+            height: 60px;
+        }
+
+        .star-decoration svg {
+            width: 100%;
+            height: 100%;
         }
 
         .star-1 {
-            top: 50px;
-            right: 100px;
+            top: 34px;
+            left: 719px;
         }
 
         .star-2 {
-            bottom: 100px;
-            left: 50px;
+            top: 228px;
+            left: 404px;
         }
 
-        @media (max-width: 768px) {
+        .star-3 {
+            top: 331px;
+            left: 775px;
+        }
+
+        @media (max-width: 1400px) {
+            .benefits-container {
+                height: auto;
+                min-height: 700px;
+            }
+
+            .benefit-card {
+                position: static !important;
+                width: 100% !important;
+                margin-bottom: var(--spacing-20);
+            }
+
+            .benefits-center-image {
+                position: static;
+                transform: none;
+                margin: var(--spacing-40) auto;
+            }
+
             .star-decoration {
                 display: none;
             }
         }
 
+        @media (max-width: 768px) {
+            .benefits-section {
+                padding: var(--spacing-40) var(--spacing-20);
+            }
+        }
+
         /* ========================================
-           COMPARISON TABLE SECTION
+           COMPARISON TABLE SECTION - EXACT Figma Specs
            ======================================== */
 
         .comparison-section {
-            background-color: var(--color-light-gray);
+            background-color: var(--color-white);
+            /* White background */
+            padding: var(--spacing-40) var(--spacing-120);
+            /* 40px 120px - Exact Figma */
         }
 
         .comparison-section h2 {
             text-align: center;
             color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-sm);
+            /* #010028 - Exact Figma */
+            font-size: var(--font-size-h2);
+            /* 52px */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: normal;
+            /* Exact Figma */
+            margin-bottom: 0;
         }
 
         .comparison-section .subheading {
             text-align: center;
-            color: var(--color-gray-text);
-            font-size: 20px;
-            margin-bottom: var(--spacing-xl);
+            color: var(--color-secondary-dark);
+            /* #1B1A3E - Exact Figma */
+            font-size: var(--font-size-h4);
+            /* 28px - CORRECTED from 20px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 - CORRECTED from 500 */
+            line-height: normal;
+            /* Exact Figma */
+            margin-bottom: 0;
         }
 
         .comparison-table {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-md);
-            max-width: 1000px;
-            margin: 0 auto;
+            display: flex;
+            gap: var(--spacing-20);
+            /* 20px - Exact Figma */
+            margin-top: var(--spacing-12);
+            /* 12px gap from header */
         }
 
         @media (max-width: 768px) {
             .comparison-table {
-                grid-template-columns: 1fr;
+                flex-direction: column;
             }
         }
 
         .comparison-column {
-            background-color: var(--color-white);
-            border-radius: var(--border-radius-md);
-            padding: var(--spacing-lg);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            background-color: var(--color-secondary-dark);
+            /* #1B1A3E - Both columns dark */
+            border-radius: var(--spacing-20);
+            /* 20px */
+            padding: var(--spacing-40);
+            /* 40px - Exact Figma */
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-32);
+            /* 32px - Exact Figma */
         }
 
         .comparison-column.premium {
-            background: linear-gradient(135deg, #1a1f4d 0%, #2a3f7d 100%);
-            color: var(--color-white);
+            background-color: var(--color-secondary-dark);
+            /* #1B1A3E base */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-column.premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse 632px 677px at 0% 20.5px,
+                rgba(2,149,255,1) 0%,
+                rgba(23,147,255,1) 6.09%,
+                rgba(45,145,255,1) 12.19%,
+                rgba(88,141,255,1) 24.38%,
+                rgba(130,137,255,1) 36.56%,
+                rgba(173,133,255,1) 48.75%,
+                rgba(132,164,248,1) 61.56%,
+                rgba(91,194,240,1) 74.38%,
+                rgba(49,225,233,1) 87.19%,
+                rgba(29,240,229,1) 93.59%,
+                rgba(8,255,225,1) 100%);
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .comparison-column.premium > * {
+            position: relative;
+            z-index: 1;
         }
 
         .comparison-header {
-            margin-bottom: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-12);
+            /* 12px - Exact Figma */
         }
 
         .comparison-badge {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--color-gray-text);
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .comparison-column.premium .comparison-badge {
-            color: #ffd700;
+            font-size: var(--font-size-main-text);
+            /* 20px - CORRECTED from 14px */
+            font-weight: var(--font-weight-medium);
+            /* 500 - CORRECTED from 600 */
+            color: var(--color-white);
+            /* White text */
+            line-height: var(--line-height-main);
+            /* 40px */
+            margin: 0;
         }
 
         .comparison-title {
-            font-size: 28px;
-            color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-h2);
+            /* 52px - CORRECTED from 28px */
+            font-weight: var(--font-weight-bold);
+            /* 700 - CORRECTED from 600 */
+            line-height: normal;
+            /* Exact Figma */
+            margin: 0;
+        }
+
+        .comparison-column:not(.premium) .comparison-title {
+            color: var(--color-purple);
+            /* #AD85FF - Purple for Old Lab Coat */
         }
 
         .comparison-column.premium .comparison-title {
-            color: var(--color-white);
+            background: linear-gradient(146.068deg, #0295FF 4.08%, #AD85FF 49.729%, #08FFE1 97.72%);
+            /* Gradient text from Figma */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .comparison-divider {
-            height: 2px;
-            background-color: var(--color-border);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .comparison-column.premium .comparison-divider {
-            background-color: rgba(255, 255, 255, 0.2);
+            height: 0;
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            /* Exact Figma line */
+            margin: 0;
         }
 
         .comparison-list {
             list-style: none;
             padding: 0;
-            margin-bottom: var(--spacing-md);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-22);
+            /* 22px between items - Exact Figma */
         }
 
         .comparison-list li {
-            padding: 12px 0;
             display: flex;
             align-items: flex-start;
-            color: var(--color-dark-text);
-        }
-
-        .comparison-column.premium .comparison-list li {
-            color: var(--color-white);
+            gap: var(--spacing-27);
+            /* 27px icon-to-text gap - Exact Figma */
+            color: var(--color-light-gray);
+            /* #E6E6EA */
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-main);
+            /* 40px */
+            padding: var(--spacing-10) 0;
+            /* 10px vertical padding */
         }
 
         .comparison-list li i {
-            margin-right: 12px;
-            margin-top: 4px;
-            font-size: 18px;
             flex-shrink: 0;
+            font-size: 18px;
+            /* 18x18px icons */
+            width: 18px;
+            height: 18px;
+            margin-top: 11px;
+            /* Center align with 40px line height */
         }
 
         .comparison-list li i.bi-x-circle {
-            color: #dc3545;
+            color: #FF9B00;
+            /* Orange X marks from Figma */
         }
 
         .comparison-list li i.bi-check-circle-fill {
-            color: #4caf50;
+            color: var(--color-green);
+            /* #08FFE1 - Cyan check marks */
         }
 
-        .comparison-column.premium .comparison-list li i.bi-check-circle-fill {
-            color: #4caf50;
+        .comparison-column.premium .btn-primary {
+            background-color: var(--color-primary-blue);
+            /* #008AED */
+            border: none;
+            border-radius: var(--spacing-40);
+            /* 40px - pill shape */
+            padding: var(--spacing-16) var(--spacing-20);
+            /* 16px 20px */
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--spacing-20);
+            /* 20px */
+            color: var(--color-white);
+            align-self: flex-start;
+            margin: 0;
+        }
+
+        .comparison-column.premium .btn-primary:hover {
+            background-color: #0070c9;
         }
 
         /* ========================================
-           PROCESS/STEPS SECTION
+           PROCESS/STEPS SECTION - EXACT Figma Specs
            ======================================== */
 
         .process-section {
             background-color: var(--color-white);
+            padding: var(--spacing-60) var(--spacing-100);
+            /* 60px 100px */
         }
 
         .process-section h2 {
             text-align: center;
-            color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-xl);
+            color: var(--color-dark-text);
+            /* #010028 */
+            font-size: var(--font-size-h2);
+            /* 52px */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: var(--line-height-heading);
+            /* 1 */
+            margin-bottom: var(--spacing-20);
         }
 
-        .process-steps-container {
+        /* Step numbers container with connecting lines */
+        .process-steps-numbers {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: var(--spacing-lg);
-            flex-wrap: wrap;
-            gap: var(--spacing-md);
+            gap: 0;
+            margin-bottom: var(--spacing-20);
+            position: relative;
+            max-width: 925.875px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .process-step {
+        .step-number-wrapper {
+            position: relative;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            flex: 1;
-            max-width: 300px;
-            min-width: 200px;
         }
 
         .step-number {
-            width: 80px;
-            height: 80px;
+            width: 74px;
+            height: 74px;
             border-radius: 50%;
-            background-color: var(--color-primary-blue);
-            color: var(--color-white);
+            border: 1.5px solid var(--color-primary-blue);
+            /* #008AED */
+            background-color: transparent;
+            color: var(--color-secondary-dark);
+            /* #1B1A3E */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: var(--spacing-md);
+            font-size: 42px;
+            font-weight: var(--font-weight-extra-light);
+            /* 200 - Extra Light */
+            line-height: var(--line-height-heading);
+            /* 1 */
             position: relative;
+            z-index: 2;
         }
 
-        .step-number::after {
-            content: '';
-            position: absolute;
-            right: -100px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 80px;
-            height: 2px;
-            background-color: var(--color-border);
+        /* Connecting lines between step numbers */
+        .step-connector {
+            width: 360px;
+            height: 1.5px;
+            background-color: var(--color-primary-blue);
+            /* #008AED */
+            margin: 0 -1px;
+            z-index: 1;
         }
 
-        .process-step:last-child .step-number::after {
-            display: none;
+        /* Step cards container */
+        .process-steps-cards {
+            display: flex;
+            gap: var(--spacing-20);
+            /* 20px */
+            margin-bottom: var(--spacing-20);
+            max-width: 1240px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .step-content h4 {
+        .process-step-card {
+            flex: 1;
+            background-color: var(--color-light-gray);
+            /* #E6E6EA */
+            border-radius: var(--spacing-12);
+            /* 12px */
+            padding: var(--spacing-40) var(--spacing-20);
+            /* 40px 20px */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-xs);
-            font-size: 20px;
+            gap: var(--spacing-12);
+            /* 12px */
+            height: 144px;
         }
 
-        .step-content p {
-            text-align: center;
-            color: var(--color-gray-text);
+        .process-step-card h4 {
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-main);
+            /* 28px */
+            color: var(--color-dark-text);
+            /* #010028 */
+            margin: 0;
+        }
+
+        .process-step-card p {
+            font-size: var(--font-size-paragraph);
+            /* 16px */
+            font-weight: var(--font-weight-regular);
+            /* 400 */
+            line-height: var(--line-height-paragraph);
+            /* 24px */
+            color: var(--color-dark-text);
+            /* #010028 */
             margin: 0;
         }
 
@@ -938,120 +1558,463 @@
             text-align: center;
         }
 
+        @media (max-width: 1024px) {
+            .process-steps-numbers {
+                max-width: 600px;
+            }
+
+            .step-connector {
+                width: 200px;
+            }
+
+            .process-steps-cards {
+                flex-direction: column;
+            }
+
+            .process-step-card {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
         @media (max-width: 768px) {
-            .step-number::after {
+            .process-section {
+                padding: var(--spacing-40) var(--spacing-20);
+            }
+
+            .process-steps-numbers {
+                flex-direction: column;
+                gap: var(--spacing-20);
+            }
+
+            .step-connector {
                 display: none;
             }
         }
 
         /* ========================================
-           TARGET AUDIENCE SECTION
+           TARGET AUDIENCE SECTION - EXACT Figma Specs
            ======================================== */
 
         .audience-section {
-            background-color: var(--color-light-gray);
+            background-color: var(--color-white);
+            /* White background */
+            padding: var(--spacing-40) 0;
+            /* 40px vertical, 0 horizontal for full-width pills */
         }
 
         .audience-section h2 {
             text-align: center;
             color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-md);
+            /* #010028 - Exact Figma */
+            font-size: var(--font-size-h2);
+            /* 52px */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: normal;
+            /* Exact Figma */
+            max-width: 762px;
+            /* Force 2-line wrap - Exact Figma */
+            margin: 0 auto var(--spacing-20);
+            /* 20px gap to pills */
+            padding: 0 var(--spacing-120);
+            /* Side padding for heading */
         }
 
         .audience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
+            display: flex;
+            /* Horizontal layout - Exact Figma */
+            gap: var(--spacing-8);
+            /* 8px gap between pills - Exact Figma */
+            overflow-x: auto;
+            /* Enable horizontal scrolling */
+            overflow-y: hidden;
+            padding: 0;
+            /* No padding - Full width scrolling */
+            margin-bottom: var(--spacing-20);
+            /* 20px gap to description */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            /* Hide scrollbar Firefox */
+            -ms-overflow-style: none;
+            /* Hide scrollbar IE/Edge */
+            justify-content: center;
+            /* Center pills when not scrolling */
+        }
+
+        .audience-grid::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar Chrome/Safari */
         }
 
         .audience-item {
             display: flex;
+            flex-direction: row;
+            /* Horizontal layout - Exact Figma */
             align-items: center;
-            background-color: var(--color-white);
-            padding: var(--spacing-sm);
-            border-radius: var(--border-radius-sm);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            justify-content: center;
+            gap: var(--spacing-8);
+            /* 8px icon-to-text gap - Exact Figma */
+            background-color: var(--color-secondary-dark);
+            /* #1B1A3E - Exact Figma */
+            padding: var(--spacing-16) var(--spacing-28);
+            /* 16px vertical, 28px horizontal - Exact Figma */
+            border-radius: var(--spacing-8);
+            /* 8px - Exact Figma */
+            flex-shrink: 0;
+            /* Prevent shrinking */
+            white-space: nowrap;
+            /* Keep text in single line */
         }
 
         .audience-item i {
-            color: var(--color-success);
-            font-size: 24px;
-            margin-right: var(--spacing-sm);
+            color: var(--color-green);
+            /* #08FFE1 - Cyan check marks - Exact Figma */
+            font-size: 36px;
+            /* 36px - Exact Figma */
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            /* Center icon vertically */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin: 0;
+        }
+
+        .audience-item span {
+            color: var(--color-white);
+            /* White text - Exact Figma */
+            font-size: var(--font-size-h4);
+            /* 28px - Exact Figma */
+            font-weight: var(--font-weight-semibold);
+            /* 600 - Exact Figma */
+            line-height: normal;
+            /* Exact Figma */
+            white-space: nowrap;
+            /* No wrapping */
         }
 
         .audience-description {
             text-align: center;
-            font-size: 18px;
-            color: var(--color-dark-text);
-            max-width: 900px;
-            margin: 0 auto var(--spacing-lg);
+            font-size: var(--font-size-h4);
+            /* 28px - CORRECTED from 20px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 - CORRECTED from 500 */
+            color: var(--color-secondary-dark);
+            /* #1B1A3E - CORRECTED from dark-text */
+            line-height: normal;
+            /* Exact Figma */
+            width: 100%;
+            /* Full width */
+            margin: 0 auto var(--spacing-20);
+            /* 20px gap to testimonial */
+            padding: 0 var(--spacing-120);
+            /* Side padding */
         }
 
         .testimonial-section {
-            background-color: var(--color-white);
-            padding: var(--spacing-xl);
-            border-radius: var(--border-radius-md);
-            max-width: 900px;
+            background: linear-gradient(108.213deg, rgba(2, 149, 255, 0.2) 4.08%, rgba(173, 133, 255, 0.2) 49.729%, rgba(8, 255, 225, 0.2) 97.72%);
+            /* Gradient background from Figma */
+            padding: var(--spacing-40) 0;
+            /* 40px vertical, 0 horizontal - Exact Figma */
+            border-radius: var(--spacing-32);
+            /* 32px */
+            width: 1135px;
+            /* Exact Figma width */
+            max-width: calc(100% - 240px);
+            /* Respect side margins */
             margin: 0 auto;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-33);
+            /* 33px - Exact Figma */
         }
 
         .testimonial-icon {
             text-align: center;
-            margin-bottom: var(--spacing-md);
+            width: 158px;
+            height: 158px;
+            /* Exact Figma icon container size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .testimonial-icon i {
-            font-size: 64px;
+            font-size: 158px;
+            /* Exact Figma */
             color: var(--color-primary-blue);
         }
 
         .testimonial-heading {
             text-align: center;
             color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-md);
+            /* #010028 - Exact Figma */
+            font-size: var(--font-size-h2);
+            /* 52px - CORRECTED from 28px */
+            font-weight: var(--font-weight-bold);
+            /* 700 - CORRECTED from 600 */
+            line-height: normal;
+            /* Exact Figma */
+            max-width: 889px;
+            /* Exact Figma width */
+            margin: 0;
         }
 
         .testimonial-text {
             text-align: center;
-            color: var(--color-gray-text);
-            font-size: 18px;
+            color: var(--color-primary-navy);
+            /* #010028 - Exact Figma */
+            font-size: var(--font-size-paragraph);
+            /* 16px */
+            font-weight: var(--font-weight-regular);
+            /* 400 */
             font-style: italic;
-            line-height: 1.8;
+            line-height: var(--spacing-32);
+            /* 32px - CORRECTED from 1.5 (24px) */
+            max-width: 953px;
+            /* Exact Figma width */
+            margin: 0;
         }
 
         /* ========================================
-           FAQ SECTION
+           FAQ SECTION - EXACT Figma Specs
            ======================================== */
 
         .faq-section {
             background-color: var(--color-white);
+            padding: var(--spacing-60) var(--spacing-100);
+            /* 60px 100px */
+        }
+
+        .faq-container {
+            display: flex;
+            gap: 2px;
+            max-width: 1240px;
+            margin: 0 auto;
         }
 
         .faq-intro {
-            max-width: 600px;
-            margin-bottom: var(--spacing-xl);
+            flex: 0 0 auto;
+            width: 501px;
+            margin-right: 48px;
         }
 
         .faq-intro h2 {
-            color: var(--color-primary-navy);
-            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-h2);
+            /* 52px */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: var(--line-height-heading);
+            /* 1 */
+            color: var(--color-dark-text);
+            /* #010028 */
+            margin-bottom: var(--spacing-20);
+            max-width: 501px;
         }
 
         .faq-intro p {
-            color: var(--color-gray-text);
-            font-size: 18px;
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: 2;
+            /* 40px */
+            color: var(--color-dark-text);
+            /* #010028 */
+            max-width: 440px;
         }
 
-        .accordion-button:not(.collapsed) {
-            background-color: var(--color-light-blue);
-            color: var(--color-primary-navy);
+        .faq-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-20);
+            /* 20px */
+        }
+
+        .faq-item,
+        .accordion-item {
+            background-color: rgba(27, 26, 62, 0.1);
+            /* Exact Figma */
+            border-radius: var(--spacing-20);
+            /* 20px - Exact Figma */
+            border: none;
+            /* Remove Bootstrap border */
+            margin-bottom: var(--spacing-20);
+            /* 20px gap - Exact Figma */
+            overflow: hidden;
+            /* Contain rounded corners */
+        }
+
+        .faq-item:hover,
+        .accordion-item:hover {
+            background-color: rgba(27, 26, 62, 0.15);
+        }
+
+        .accordion-button {
+            background-color: transparent !important;
+            /* Match parent background */
+            border: none !important;
+            /* Remove Bootstrap border */
+            padding: 27px 36px !important;
+            /* 27px 36px - Exact Figma */
+            min-height: 94px;
+            /* Exact Figma */
+            font-size: var(--font-size-h4) !important;
+            /* 28px */
+            font-weight: var(--font-weight-semibold) !important;
+            /* 600 */
+            line-height: normal !important;
+            /* Exact Figma */
+            color: var(--color-primary-navy) !important;
+            /* #010028 */
+            box-shadow: none !important;
+            /* Remove Bootstrap shadow */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
         }
 
         .accordion-button:focus {
-            box-shadow: none;
-            border-color: var(--color-border);
+            box-shadow: none !important;
+            /* Remove focus shadow */
+            border: none !important;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: transparent !important;
+            color: var(--color-primary-navy) !important;
+        }
+
+        .accordion-button::after {
+            width: 21px;
+            /* Exact Figma icon width */
+            height: 10.5px;
+            /* Exact Figma icon height */
+            background-size: 21px 10.5px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            transform: rotate(-180deg);
+            /* Flip chevron when expanded */
+        }
+
+        .accordion-body {
+            padding: 0 36px 27px 36px;
+            /* Match left/right padding, add bottom padding */
+            font-size: var(--font-size-paragraph);
+            /* 16px */
+            font-weight: var(--font-weight-regular);
+            /* 400 */
+            line-height: var(--line-height-paragraph);
+            /* 24px */
+            color: var(--color-primary-navy);
+            /* #010028 */
+        }
+
+        .accordion-collapse {
+            border: none !important;
+            /* Remove Bootstrap border */
+        }
+
+        .faq-question {
+            font-size: var(--font-size-h4);
+            /* 28px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 */
+            line-height: normal;
+            /* Exact Figma */
+            color: var(--color-primary-navy);
+            /* #010028 */
+            margin: 0;
+            max-width: 516px;
+        }
+
+        .faq-icon {
+            width: 21px;
+            height: 10.5px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.expanded .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .load-more-button {
+            border: 1px solid #0295ff;
+            /* Exact Figma */
+            border-radius: var(--spacing-32);
+            /* 32px - Exact Figma */
+            padding: var(--spacing-16) var(--spacing-32);
+            /* 16px 32px - Exact Figma */
+            font-size: var(--font-size-paragraph);
+            /* 16px */
+            font-weight: var(--font-weight-regular);
+            /* 400 */
+            line-height: var(--line-height-paragraph);
+            /* 24px */
+            color: var(--color-primary-navy);
+            /* #010028 - Exact Figma */
+            background-color: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: var(--spacing-20);
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .load-more-button:hover {
+            background-color: #0295ff;
+            color: white;
+        }
+
+        /* Ensure FAQ items have max-width */
+        .faq-list .accordion-item {
+            max-width: 650px;
+            /* Exact Figma width */
+        }
+
+        @media (max-width: 1024px) {
+            .faq-container {
+                flex-direction: column;
+            }
+
+            .faq-intro {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: var(--spacing-40);
+            }
+
+            .faq-list {
+                width: 100%;
+            }
+
+            .faq-item {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: var(--spacing-40) var(--spacing-20);
+            }
+
+            .faq-intro h2 {
+                font-size: 36px;
+            }
+
+            .faq-question {
+                font-size: 20px;
+            }
         }
 
         .accordion-item {
@@ -1077,21 +2040,26 @@
            ======================================== */
 
         .final-cta-section {
-            background: linear-gradient(135deg, #1a1f4d 0%, #2a3f7d 100%);
+            background-color: #173264;
+            /* Darker navy - Exact Figma */
             color: var(--color-white);
         }
 
         .cta-images-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-md);
+            gap: var(--spacing-20);
+            /* 20px - Exact Figma */
+            margin-bottom: var(--spacing-40);
         }
 
         .cta-image-item {
-            border-radius: var(--border-radius-sm);
+            border-radius: var(--spacing-20);
+            /* 20px - CORRECTED from 8px */
             overflow: hidden;
             position: relative;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+            /* Shadow effect from Figma */
         }
 
         .cta-image-item img {
@@ -1102,12 +2070,19 @@
 
         .cta-badge {
             display: inline-block;
-            background-color: var(--color-warning);
-            color: var(--color-white);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            margin-bottom: var(--spacing-md);
+            background-color: var(--color-green);
+            /* #08FFE1 - Cyan/green from Figma */
+            color: var(--color-primary-navy);
+            /* #010028 - Dark text */
+            padding: var(--spacing-12) var(--spacing-20);
+            /* 12px 20px */
+            border-radius: var(--spacing-20);
+            /* 20px pill */
+            font-size: var(--font-size-paragraph);
+            /* 16px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 */
+            margin-bottom: var(--spacing-20);
         }
 
         .cta-content h2 {
@@ -1263,9 +2238,9 @@
          HERO SECTION
          ======================================== -->
     <section class="hero-section">
-        <div class="container">
+        <div class="container-fluid px-0">
             <!-- Hero container with gradient background and rounded corners -->
-            <div class="hero-container">
+            <div class="hero-container" style="background: radial-gradient(ellipse at 30% 50%, rgba(0, 135, 180, 1) 0%, rgba(0, 127, 171, 1) 14.5%, rgba(1, 102, 144, 1) 52.6%, rgba(1, 76, 113, 1) 76.3%, rgba(0, 50, 82, 1) 100%)">
                 <div class="row align-items-center">
                     <div class="col-lg-6 hero-content">
                         <p class="hero-eyebrow">For scientists who've outgrown their old lab coat</p>
@@ -1292,34 +2267,31 @@
          PROBLEM STATEMENT SECTION
          ======================================== -->
     <section class="problem-section">
-        <div class="container">
-            <h2>You've done serious work. Your lab coat should show it.</h2>
-            <p class="subheading">Your current coat has been through a lot:</p>
+        <h2>
+            You've done serious work.<br>
+            Your lab coat should show it.
+        </h2>
+        <p class="subheading">Your current coat has been through a lot:</p>
 
-            <div class="problem-grid">
-                <div class="problem-item">
-                    <i class="bi bi-exclamation-triangle-fill"></i>
-                    <span>Yellowing stains and stubborn stains</span>
-                </div>
-                <div class="problem-item">
-                    <i class="bi bi-exclamation-triangle-fill"></i>
-                    <span>Boxy fit that photographs terribly</span>
-                </div>
-                <div class="problem-item">
-                    <i class="bi bi-exclamation-triangle-fill"></i>
-                    <span>Awkward sleeves that slide up or drag over your hands</span>
-                </div>
-                <div class="problem-item">
-                    <i class="bi bi-exclamation-triangle-fill"></i>
-                    <span>Not enough pockets where you actually need them</span>
-                </div>
+        <div class="problem-grid">
+            <div class="problem-item">
+                <span>Yellowing stains and stubborn stains</span>
             </div>
-
-            <p class="closing-statement">
-                You've improved as a scientist. Your lab coat hasn't. It's time to upgrade the one thing you wear almost
-                every day in the lab.
-            </p>
+            <div class="problem-item">
+                <span>Boxy fit that photographs terribly</span>
+            </div>
+            <div class="problem-item">
+                <span>Awkward sleeves that slide up or drag over your hands</span>
+            </div>
+            <div class="problem-item">
+                <span>Not enough pockets where you actually need them</span>
+            </div>
         </div>
+
+        <p class="closing-statement">
+            You've improved as a scientist. Your lab coat hasn't.<br>
+            It's time to upgrade the one thing you wear almost every day in the lab.
+        </p>
     </section>
 
     <!-- ========================================
@@ -1340,7 +2312,8 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="product-intro-content">
-                        <p class="product-eyebrow">Meet FullGuard™</p>
+                        <!-- Gradient text eyebrow -->
+                        <h2 class="product-eyebrow">Meet FullGuard™</h2>
                         <h2 class="product-headline">the lab coat you actually want to wear.</h2>
                         <p class="product-description">
                             FullGuard is a modern, scientist-designed lab coat that combines professional presentation,
@@ -1351,10 +2324,10 @@
                             <li>Confident when you step in front of students or supervisors</li>
                             <li>Comfortable during long days at the bench</li>
                         </ul>
-                        <p class="product-description">
-                            <strong>This isn't just a new coat. It's an upgrade to how you show up in the lab.</strong>
+                        <p class="product-closing">
+                            This isn't just a new coat. It's an upgrade to how you show up in the lab.
                         </p>
-                        <a href="#features" class="btn-primary-custom">View Features & Sizing</a>
+                        <a href="#features" class="btn-primary-custom">Get Your FullGuard Coat</a>
                     </div>
                 </div>
             </div>
@@ -1362,20 +2335,23 @@
     </section>
 
     <!-- ========================================
-         FEATURES SECTION
+         FEATURES SECTION - EXACT Figma Specs
          ======================================== -->
     <section class="features-section" id="features">
-        <div class="container">
+        <!-- Header with 2-line title -->
+        <div class="features-header">
             <h2>Features That Fix What Old Coats Get Wrong</h2>
             <p class="subheading">Designed after listening to real scientists.</p>
+        </div>
 
-            <div class="features-grid">
+        <!-- 2-column layout (968px wide) -->
+        <div class="features-grid">
+            <!-- Left Column (3 cards) -->
+            <div class="features-column">
                 <!-- Feature 1 -->
                 <div class="feature-item">
                     <div class="feature-icon">
-                        <div class="icon-circle">
-                            <i class="bi bi-check2-circle"></i>
-                        </div>
+                        <i class="bi bi-shield-check"></i>
                     </div>
                     <div class="feature-content">
                         <h4>Modern collar</h4>
@@ -1386,22 +2362,7 @@
                 <!-- Feature 2 -->
                 <div class="feature-item">
                     <div class="feature-icon">
-                        <div class="icon-circle">
-                            <i class="bi bi-check2-circle"></i>
-                        </div>
-                    </div>
-                    <div class="feature-content">
-                        <h4>Deep hip pockets</h4>
-                        <p>Plenty of space for notes, gloves, markers, or your phone between experiments.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <div class="icon-circle">
-                            <i class="bi bi-check2-circle"></i>
-                        </div>
+                        <i class="bi bi-shield-check"></i>
                     </div>
                     <div class="feature-content">
                         <h4>Ribbed knit cuffs</h4>
@@ -1409,12 +2370,35 @@
                     </div>
                 </div>
 
+                <!-- Feature 3 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="bi bi-scissors"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Clean silhouette, better fit</h4>
+                        <p>Designed to give structure without feeling stiff, so you look sharp, not boxy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column (3 cards) -->
+            <div class="features-column">
                 <!-- Feature 4 -->
                 <div class="feature-item">
                     <div class="feature-icon">
-                        <div class="icon-circle">
-                            <i class="bi bi-check2-circle"></i>
-                        </div>
+                        <i class="bi bi-bag"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Deep hip pockets</h4>
+                        <p>Plenty of space for notes, gloves, markers, or your phone between experiments.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-check"></i>
                     </div>
                     <div class="feature-content">
                         <h4>Six-snap front closure</h4>
@@ -1422,30 +2406,14 @@
                     </div>
                 </div>
 
-                <!-- Feature 5 -->
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <div class="icon-circle">
-                            <i class="bi bi-check2-circle"></i>
-                        </div>
-                    </div>
-                    <div class="feature-content">
-                        <h4>Clean silhouette, better fit</h4>
-                        <p>Designed to give structure without feeling stiff, so you look sharp, not boxy.</p>
-                    </div>
-                </div>
-
                 <!-- Feature 6 -->
                 <div class="feature-item">
                     <div class="feature-icon">
-                        <div class="icon-circle">
-                            <i class="bi bi-check2-circle"></i>
-                        </div>
+                        <i class="bi bi-wallet2"></i>
                     </div>
                     <div class="feature-content">
                         <h4>Smart chest pockets</h4>
-                        <p>Dual chest pockets with dedicated slots for pens and a ruler, so you're never digging around.
-                        </p>
+                        <p>Dual chest pockets with dedicated slots for pens and a ruler, so you're never digging around.</p>
                     </div>
                 </div>
             </div>
@@ -1453,48 +2421,67 @@
     </section>
 
     <!-- ========================================
-         BENEFITS SECTION
+         BENEFITS SECTION - EXACT Figma Specs
          ======================================== -->
     <section class="benefits-section" id="benefits">
-        <div class="container">
-            <h2>Look the part. Feel the difference.</h2>
+        <h2>Look the part. Feel the difference.</h2>
 
-            <div class="benefits-container">
-                <!-- Decorative stars -->
-                <span class="star-decoration star-1">★</span>
-                <span class="star-decoration star-2">★</span>
+        <div class="benefits-container">
+            <!-- Central image with gradient overlays -->
+            <div class="benefits-center-image">
+                <!-- REPLACE: Central image - Scientist in FullGuard (336x488px) -->
+                <!-- Suggested filename: benefits-scientist.jpg -->
+                <img src="https://via.placeholder.com/336x488/ffffff/1a1f4d?text=Scientist+Portrait"
+                    alt="Confident scientist in FullGuard">
+            </div>
 
-                <div class="benefits-center-image">
-                    <!-- REPLACE: Central image - Scientist in FullGuard (approx 400x600px) -->
-                    <!-- Suggested filename: benefits-center.jpg -->
-                    <img src="https://via.placeholder.com/400x600/ffffff/1a1f4d?text=Scientist+Portrait"
-                        alt="Confident scientist in FullGuard">
+            <!-- Glassmorphism benefit cards with absolute positioning -->
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>Credibility</h4>
+                    <p>You look like you take the work seriously.</p>
                 </div>
-
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <h4>Credibility</h4>
-                        <p>You look like you take the work seriously.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <h4>Confidence</h4>
-                        <p>You stop worrying about how you look and focus on the science</p>
-                    </div>
-                    <div class="benefit-card">
-                        <h4>Comfort</h4>
-                        <p>Lightweight, breathable fabric that moves with you.</p>
-                    </div>
+                <div class="benefit-card">
+                    <h4>Confidence</h4>
+                    <p>You stop worrying about how you look and focus on the science</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Comfort</h4>
+                    <p>Lightweight, breathable fabric that moves with you.</p>
                 </div>
             </div>
 
-            <p class="benefits-closing">
-                From walking into group meeting to taking photos for a poster or LinkedIn, FullGuard helps you show up
-                like the scientist you've worked hard to become.
-            </p>
-
-            <div class="benefits-cta">
-                <a href="#shop" class="btn-primary-custom">Shop Now</a>
+            <!-- Decorative stars - exact Figma positions -->
+            <div class="star-decoration star-1">
+                <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M36 0L39.708 32.292L72 36L39.708 39.708L36 72L32.292 39.708L0 36L32.292 32.292L36 0Z"
+                        fill="#42B0FF" fill-opacity="0.8" />
+                </svg>
             </div>
+            <div class="star-decoration star-2 star-small">
+                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M30 0L33.09 26.91L60 30L33.09 33.09L30 60L26.91 33.09L0 30L26.91 26.91L30 0Z"
+                        fill="#AD85FF" fill-opacity="0.7" />
+                </svg>
+            </div>
+            <div class="star-decoration star-3 star-small">
+                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M30 0L33.09 26.91L60 30L33.09 33.09L30 60L26.91 33.09L0 30L26.91 26.91L30 0Z"
+                        fill="#08FFE1" fill-opacity="0.7" />
+                </svg>
+            </div>
+        </div>
+
+        <p class="benefits-closing">
+            From walking into group meeting to taking photos for a poster or LinkedIn, FullGuard helps you show up
+            like the scientist you've worked hard to become.
+        </p>
+
+        <div class="benefits-cta">
+            <a href="#shop" class="btn-primary-custom">Upgrade Now</a>
         </div>
     </section>
 
@@ -1582,44 +2569,44 @@
     </section>
 
     <!-- ========================================
-         PROCESS/STEPS SECTION
+         PROCESS/STEPS SECTION - EXACT Figma Specs
          ======================================== -->
     <section class="process-section">
-        <div class="container">
-            <h2>Upgrading is easy.</h2>
+        <h2>Upgrading is easy.</h2>
 
-            <div class="process-steps-container">
-                <!-- Step 1 -->
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Choose your size</h4>
-                        <p>using our simple size guide</p>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Add FullGuard to your cart</h4>
-                        <p>and check out in a few clicks.</p>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Get your new coat</h4>
-                        <p>and retire your old one with no regrets.</p>
-                    </div>
-                </div>
+        <!-- Step numbers with connecting lines -->
+        <div class="process-steps-numbers">
+            <div class="step-number-wrapper">
+                <div class="step-number">1</div>
             </div>
-
-            <div class="process-cta">
-                <a href="#shop" class="btn-primary-custom">Start Shopping</a>
+            <div class="step-connector"></div>
+            <div class="step-number-wrapper">
+                <div class="step-number">2</div>
             </div>
+            <div class="step-connector"></div>
+            <div class="step-number-wrapper">
+                <div class="step-number">3</div>
+            </div>
+        </div>
+
+        <!-- Step cards -->
+        <div class="process-steps-cards">
+            <div class="process-step-card">
+                <h4>Choose your size</h4>
+                <p>using our simple size guide</p>
+            </div>
+            <div class="process-step-card">
+                <h4>Add FullGuard to your cart</h4>
+                <p>and check out in a few clicks.</p>
+            </div>
+            <div class="process-step-card">
+                <h4>Get your new coat</h4>
+                <p>and retire your old one with no regrets.</p>
+            </div>
+        </div>
+
+        <div class="process-cta">
+            <a href="#shop" class="btn-primary-custom">Find My Size & Order</a>
         </div>
     </section>
 
@@ -1627,7 +2614,6 @@
          TARGET AUDIENCE SECTION
          ======================================== -->
     <section class="audience-section">
-        <div class="container">
             <h2>Built for real working scientists and students.</h2>
 
             <div class="audience-grid">
@@ -1667,23 +2653,19 @@
                     higher grades. This app is truly a game-changer!"
                 </p>
             </div>
-        </div>
     </section>
 
     <!-- ========================================
-         FAQ SECTION
+         FAQ SECTION - EXACT Figma Specs
          ======================================== -->
     <section class="faq-section" id="faq">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="faq-intro">
-                        <h2>Frequently asked questions</h2>
-                        <p>Here are some frequently asked questions about ScienceAide and FullGuard lab coats</p>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="accordion" id="faqAccordion">
+        <div class="faq-container">
+            <div class="faq-intro">
+                <h2>Frequently asked questions</h2>
+                <p>Here are some frequently asked questions about SicenceAide AI tutoring</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-items">
                         <!-- FAQ 1 -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
