@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Upgrade to FullGuard™ - the modern lab coat designed for scientists who've outgrown their old coat. Professional, functional, and comfortable.">
+    <meta name="keywords" content="lab coat, scientist, FullGuard, professional lab coat, modern lab coat, ScienceAide">
+    <title>FullGuard™ Lab Coat - Retire Your Old Lab Coat | ScienceAide</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           CONFIGURATION SECTION
+           Easy customization of colors, fonts, and spacing
+           ======================================== */
+
+        :root {
+            /* FIGMA EXACT COLORS */
+            /* Primary Colors */
+            --color-primary-navy: #010028;
+            /* Dark blue background - EXACT from Figma */
+            --color-primary-blue: #008AED;
+            /* Blue/Primary - EXACT from Figma */
+            --color-secondary-dark: #1B1A3E;
+            /* 2 dark shade gray - EXACT from Figma */
+            --color-light-gray: #E6E6EA;
+            /* Light Gray - EXACT from Figma */
+            --color-purple: #AD85FF;
+            /* Purple - EXACT from Figma */
+            --color-green: #08FFE1;
+            /* Green/Cyan - EXACT from Figma */
+
+            /* Neutral Colors */
+            --color-white: #FFFFFF;
+            /* Pure White - EXACT from Figma */
+            --color-dark-text: #010028;
+            /* Dark gray (same as navy) */
+            --color-gray-text: #1B1A3E;
+            /* Text gray */
+            --color-border: #e0e0e0;
+
+            /* Typography - EXACT from Figma */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+            /* Font Sizes - EXACT from Figma */
+            --font-size-h2: 52px;
+            /* H2 Heading */
+            --font-size-h4: 28px;
+            /* H4 */
+            --font-size-main-text: 20px;
+            /* Main text/Sub text */
+            --font-size-paragraph: 16px;
+            /* Paragraph */
+            --font-size-h3: 42px;
+            /* H3 (for step numbers) */
+
+            /* Line Heights - EXACT from Figma */
+            --line-height-heading: 1;
+            /* 100% for headings */
+            --line-height-main: 1.4;
+            /* 28px / 20px = 1.4 */
+            --line-height-paragraph: 1.5;
+            /* 24px / 16px = 1.5 */
+            --line-height-nav: 2;
+            /* 40px / 20px = 2 */
+
+            /* Font Weights - EXACT from Figma */
+            --font-weight-extralight: 200;
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+
+            /* Spacing - EXACT from Figma */
+            --spacing-8: 8px;
+            --spacing-12: 12px;
+            --spacing-16: 16px;
+            --spacing-20: 20px;
+            --spacing-28: 28px;
+            --spacing-32: 32px;
+            --spacing-40: 40px;
+            --spacing-60: 60px;
+            --spacing-80: 80px;
+            --spacing-100: 100px;
+            --spacing-120: 120px;
+
+            /* Container */
+            --container-max-width: 1440px;
+            /* Figma frame width */
+            --container-padding: 120px;
+            /* Standard horizontal padding */
+
+            /* Border Radius - EXACT from Figma */
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 20px;
+            --border-radius-2xl: 32px;
+            --border-radius-pill: 40px;
+
+            /* Transitions */
+            --transition-base: all 0.3s ease;
+        }
+
+        /* ========================================
+           GLOBAL STYLES
+           ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            font-size: var(--font-size-paragraph);
+            line-height: var(--line-height-paragraph);
+            color: var(--color-dark-text);
+            background-color: var(--color-white);
+            overflow-x: hidden;
+        }
+
+        /* Typography - EXACT Figma Specs */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-heading);
+            margin-bottom: var(--spacing-20);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, var(--font-size-h2));
+        }
+
+        /* 52px max */
+        h2 {
+            font-size: var(--font-size-h2);
+        }
+
+        /* 52px */
+        h3 {
+            font-size: var(--font-size-h3);
+        }
+
+        /* 42px */
+        h4 {
+            font-size: var(--font-size-h4);
+        }
+
+        /* 28px */
+
+        p {
+            margin-bottom: var(--spacing-20);
+            font-size: var(--font-size-paragraph);
+            line-height: var(--line-height-paragraph);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-base);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Container */
+        .container-custom {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* Section Spacing - EXACT Figma Specs */
+        section {
+            padding: var(--spacing-40) var(--container-padding);
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: var(--spacing-40) var(--spacing-20);
+            }
+
+            .container-custom {
+                padding: 0 var(--spacing-20);
+            }
+        }
+
+        /* ========================================
+           COMPONENT STYLES
+           ======================================== */
+
+        /* Buttons - EXACT Figma Specs */
+        .btn-primary-custom {
+            background-color: var(--color-primary-blue);
+            /* #008AED */
+            color: var(--color-white);
+            padding: var(--spacing-20) var(--spacing-40);
+            /* 20px 40px */
+            border-radius: var(--border-radius-pill);
+            /* 40px */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            line-height: var(--line-height-heading);
+            /* 1 */
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-base);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #0076cc;
+            color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 138, 237, 0.3);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(122.483deg, #42B0FF 4.08%, #AD85FF 49.729%, #08FFE1 97.72%);
+            color: var(--color-secondary-dark);
+            /* #1B1A3E */
+            padding: var(--spacing-20) var(--spacing-40);
+            border-radius: var(--border-radius-pill);
+            font-weight: var(--font-weight-medium);
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-base);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-gradient:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary-custom {
+            background-color: transparent;
+            color: var(--color-primary-blue);
+            padding: 14px 36px;
+            border: 2px solid var(--color-primary-blue);
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-base);
+            display: inline-block;
+        }
+
+        .btn-secondary-custom:hover {
+            background-color: var(--color-primary-blue);
+            color: var(--color-white);
+        }
+
+        /* Cards */
+        .card-custom {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: var(--transition-base);
+        }
+
+        .card-custom:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        /* Icons */
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--color-light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .icon-circle i {
+            font-size: 24px;
+            color: var(--color-primary-blue);
+        }
+
+        /* Checkmark */
+        .checkmark {
+            color: var(--color-success);
+            font-size: 20px;
+            margin-right: 8px;
+        }
+
+        /* ========================================
+           NAVIGATION BAR - EXACT Figma Specs
+           ======================================== */
+
+        .navbar-custom {
+            background-color: var(--color-primary-navy);
+            /* #010028 */
+            padding: var(--spacing-16) var(--spacing-32);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-custom .container {
+            max-width: var(--container-max-width);
+        }
+
+        .navbar-custom .navbar-brand {
+            color: var(--color-white);
+            font-size: 24px;
+            font-weight: var(--font-weight-bold);
+        }
+
+        .navbar-custom .nav-link {
+            color: var(--color-white);
+            margin: 0 var(--spacing-40);
+            /* 80px gap as per Figma */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            line-height: var(--line-height-nav);
+            /* 40px */
+            padding: var(--spacing-8) var(--spacing-32);
+            border-radius: var(--border-radius-pill);
+            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.01);
+            transition: var(--transition-base);
+        }
+
+        .navbar-custom .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-custom .cart-icon {
+            color: var(--color-white);
+            font-size: var(--font-size-main-text);
+        }
+
+        /* ========================================
+           HERO SECTION - EXACT Figma Specs
+           Container approach with margins
+           ======================================== */
+
+        .hero-section {
+            background-color: transparent;
+            /* Outer section has no background */
+            position: relative;
+            padding: var(--spacing-40) var(--container-padding);
+            /* 40px top/bottom, 120px sides */
+        }
+
+        .hero-container {
+            background: radial-gradient(ellipse at 30% 50%, rgba(0, 135, 180, 1) 0%, rgba(0, 127, 171, 1) 14.5%, rgba(1, 102, 144, 1) 52.6%, rgba(1, 76, 113, 1) 76.3%, rgba(0, 50, 82, 1) 100%);
+            border-radius: var(--border-radius-lg);
+            /* 16px rounded corners */
+            padding: var(--spacing-100) var(--container-padding) var(--spacing-40);
+            /* 100px top, 120px sides, 40px bottom */
+            position: relative;
+            overflow: hidden;
+            min-height: 624px;
+        }
+
+        /* Vector decorative element */
+        .hero-container::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -59px;
+            width: 269px;
+            height: 685px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            font-size: 24px;
+            /* Exact Figma */
+            color: #E6E6EA;
+            /* Light Gray from Figma */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-heading);
+            margin-bottom: var(--spacing-28);
+        }
+
+        .hero-headline {
+            font-size: var(--font-size-h2);
+            /* 52px */
+            color: var(--color-white);
+            /* White text on dark background */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: var(--line-height-heading);
+            /* 100% */
+            margin-bottom: var(--spacing-28);
+            max-width: 656px;
+        }
+
+        .hero-description {
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            color: var(--color-white);
+            /* White text */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-main);
+            /* 28px */
+            margin-bottom: var(--spacing-60);
+            max-width: 708px;
+        }
+
+        .hero-image-container {
+            position: relative;
+            z-index: 2;
+            text-align: right;
+        }
+
+        .hero-image {
+            border-radius: var(--border-radius-lg);
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Mobile - Full width approach */
+        @media (max-width: 991px) {
+            .hero-section {
+                padding: var(--spacing-20);
+            }
+
+            .hero-container {
+                padding: var(--spacing-60) var(--spacing-20);
+                border-radius: 0;
+                /* Full width on mobile */
+            }
+
+            .hero-image-container {
+                margin-top: var(--spacing-40);
+                text-align: center;
+            }
+        }
+
+        /* ========================================
+           PROBLEM STATEMENT SECTION
+           ======================================== */
+
+        .problem-section {
+            background-color: var(--color-light-gray);
+        }
+
+        .problem-section h2 {
+            text-align: center;
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .problem-section .subheading {
+            text-align: center;
+            color: var(--color-gray-text);
+            font-size: 20px;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .problem-item {
+            background-color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .problem-item i {
+            color: var(--color-warning);
+            font-size: 24px;
+            margin-right: var(--spacing-sm);
+            flex-shrink: 0;
+        }
+
+        .closing-statement {
+            text-align: center;
+            font-size: 18px;
+            color: var(--color-dark-text);
+            max-width: 900px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        /* ========================================
+           PRODUCT INTRODUCTION SECTION
+           ======================================== */
+
+        .product-intro-section {
+            background-color: var(--color-white);
+        }
+
+        .product-image-container {
+            position: relative;
+        }
+
+        .product-image-frame {
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-intro-content {
+            padding-left: var(--spacing-lg);
+        }
+
+        .product-eyebrow {
+            font-size: 20px;
+            color: var(--color-primary-blue);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .product-headline {
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .product-description {
+            color: var(--color-gray-text);
+            margin-bottom: var(--spacing-md);
+            font-size: 18px;
+        }
+
+        .product-features-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .product-features-list li {
+            padding: 12px 0;
+            color: var(--color-dark-text);
+            font-weight: 500;
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .product-features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        @media (max-width: 991px) {
+            .product-intro-content {
+                padding-left: 0;
+                margin-top: var(--spacing-lg);
+            }
+        }
+
+        /* ========================================
+           FEATURES SECTION
+           ======================================== */
+
+        .features-section {
+            background-color: var(--color-light-gray);
+        }
+
+        .features-section h2 {
+            text-align: center;
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .features-section .subheading {
+            text-align: center;
+            color: var(--color-gray-text);
+            font-size: 20px;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-item {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-xs);
+            font-size: 20px;
+        }
+
+        .feature-content p {
+            color: var(--color-gray-text);
+            margin: 0;
+        }
+
+        /* ========================================
+           BENEFITS SECTION
+           ======================================== */
+
+        .benefits-section {
+            background-color: var(--color-white);
+            position: relative;
+        }
+
+        .benefits-section h2 {
+            text-align: center;
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .benefits-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefits-center-image {
+            text-align: center;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .benefits-center-image img {
+            max-width: 400px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .benefit-card {
+            background-color: var(--color-light-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+        }
+
+        .benefit-card h4 {
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .benefit-card p {
+            color: var(--color-gray-text);
+            margin: 0;
+        }
+
+        .benefits-closing {
+            text-align: center;
+            font-size: 18px;
+            color: var(--color-dark-text);
+            max-width: 900px;
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .benefits-cta {
+            text-align: center;
+        }
+
+        /* Decorative stars */
+        .star-decoration {
+            position: absolute;
+            color: #ffd700;
+            font-size: 48px;
+            opacity: 0.6;
+        }
+
+        .star-1 {
+            top: 50px;
+            right: 100px;
+        }
+
+        .star-2 {
+            bottom: 100px;
+            left: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .star-decoration {
+                display: none;
+            }
+        }
+
+        /* ========================================
+           COMPARISON TABLE SECTION
+           ======================================== */
+
+        .comparison-section {
+            background-color: var(--color-light-gray);
+        }
+
+        .comparison-section h2 {
+            text-align: center;
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .comparison-section .subheading {
+            text-align: center;
+            color: var(--color-gray-text);
+            font-size: 20px;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .comparison-column {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .comparison-column.premium {
+            background: linear-gradient(135deg, #1a1f4d 0%, #2a3f7d 100%);
+            color: var(--color-white);
+        }
+
+        .comparison-header {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .comparison-badge {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-gray-text);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .comparison-column.premium .comparison-badge {
+            color: #ffd700;
+        }
+
+        .comparison-title {
+            font-size: 28px;
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .comparison-column.premium .comparison-title {
+            color: var(--color-white);
+        }
+
+        .comparison-divider {
+            height: 2px;
+            background-color: var(--color-border);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .comparison-column.premium .comparison-divider {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .comparison-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .comparison-list li {
+            padding: 12px 0;
+            display: flex;
+            align-items: flex-start;
+            color: var(--color-dark-text);
+        }
+
+        .comparison-column.premium .comparison-list li {
+            color: var(--color-white);
+        }
+
+        .comparison-list li i {
+            margin-right: 12px;
+            margin-top: 4px;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .comparison-list li i.bi-x-circle {
+            color: #dc3545;
+        }
+
+        .comparison-list li i.bi-check-circle-fill {
+            color: #4caf50;
+        }
+
+        .comparison-column.premium .comparison-list li i.bi-check-circle-fill {
+            color: #4caf50;
+        }
+
+        /* ========================================
+           PROCESS/STEPS SECTION
+           ======================================== */
+
+        .process-section {
+            background-color: var(--color-white);
+        }
+
+        .process-section h2 {
+            text-align: center;
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .process-steps-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            max-width: 300px;
+            min-width: 200px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--color-primary-blue);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 2px;
+            background-color: var(--color-border);
+        }
+
+        .process-step:last-child .step-number::after {
+            display: none;
+        }
+
+        .step-content h4 {
+            text-align: center;
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-xs);
+            font-size: 20px;
+        }
+
+        .step-content p {
+            text-align: center;
+            color: var(--color-gray-text);
+            margin: 0;
+        }
+
+        .process-cta {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .step-number::after {
+                display: none;
+            }
+        }
+
+        /* ========================================
+           TARGET AUDIENCE SECTION
+           ======================================== */
+
+        .audience-section {
+            background-color: var(--color-light-gray);
+        }
+
+        .audience-section h2 {
+            text-align: center;
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .audience-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--color-white);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .audience-item i {
+            color: var(--color-success);
+            font-size: 24px;
+            margin-right: var(--spacing-sm);
+        }
+
+        .audience-description {
+            text-align: center;
+            font-size: 18px;
+            color: var(--color-dark-text);
+            max-width: 900px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .testimonial-section {
+            background-color: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-md);
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-icon {
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .testimonial-icon i {
+            font-size: 64px;
+            color: var(--color-primary-blue);
+        }
+
+        .testimonial-heading {
+            text-align: center;
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .testimonial-text {
+            text-align: center;
+            color: var(--color-gray-text);
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* ========================================
+           FAQ SECTION
+           ======================================== */
+
+        .faq-section {
+            background-color: var(--color-white);
+        }
+
+        .faq-intro {
+            max-width: 600px;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .faq-intro h2 {
+            color: var(--color-primary-navy);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .faq-intro p {
+            color: var(--color-gray-text);
+            font-size: 18px;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--color-light-blue);
+            color: var(--color-primary-navy);
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--color-border);
+        }
+
+        .accordion-item {
+            margin-bottom: var(--spacing-sm);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            font-weight: 600;
+            font-size: 18px;
+            padding: var(--spacing-md);
+        }
+
+        .accordion-body {
+            color: var(--color-gray-text);
+            font-size: 16px;
+        }
+
+        /* ========================================
+           FINAL CTA SECTION
+           ======================================== */
+
+        .final-cta-section {
+            background: linear-gradient(135deg, #1a1f4d 0%, #2a3f7d 100%);
+            color: var(--color-white);
+        }
+
+        .cta-images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-image-item {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cta-image-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .cta-badge {
+            display: inline-block;
+            background-color: var(--color-warning);
+            color: var(--color-white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-content h2 {
+            color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .cta-secondary-link {
+            color: var(--color-white);
+            text-decoration: underline;
+            margin-top: var(--spacing-sm);
+            display: inline-block;
+        }
+
+        .cta-secondary-link:hover {
+            color: var(--color-primary-blue);
+        }
+
+        @media (max-width: 991px) {
+            .cta-images-grid {
+                margin-bottom: var(--spacing-lg);
+            }
+        }
+
+        /* ========================================
+           FOOTER SECTION
+           ======================================== */
+
+        .footer {
+            background-color: var(--color-primary-navy);
+            color: var(--color-white);
+            padding: var(--spacing-xl) 0 var(--spacing-md);
+        }
+
+        .footer h5 {
+            color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+            font-size: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition-base);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary-blue);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-base);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--color-primary-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing-md);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-0 {
+            margin-bottom: 0 !important;
+        }
+
+        .mt-4 {
+            margin-top: var(--spacing-md);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================
+         NAVIGATION BAR
+         ======================================== -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <!-- REPLACE: Add ScienceAide logo here -->
+                <strong>ScienceAide</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#comparison">Compare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#shop" class="cart-icon">
+                        <i class="bi bi-cart3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="hero-section">
+        <div class="container">
+            <!-- Hero container with gradient background and rounded corners -->
+            <div class="hero-container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 hero-content">
+                        <p class="hero-eyebrow">For scientists who've outgrown their old lab coat</p>
+                        <h1 class="hero-headline">Retire Your Old Lab Coat. Upgrade to FullGuard.</h1>
+                        <p class="hero-description">
+                            Tired of boxy, stained, flimsy lab coats? Step into a modern, fitted coat designed to look
+                            sharp, feel better, and keep up with real science.
+                        </p>
+                        <!-- Gradient button with exact Figma styling -->
+                        <a href="#shop" class="btn-gradient">Shop FullGuard Lab Coats</a>
+                    </div>
+                    <div class="col-lg-6 hero-image-container">
+                        <!-- REPLACE: Hero image - Scientists in lab coats (approx 600x800px) -->
+                        <!-- Suggested filename: hero-scientists.jpg -->
+                        <img src="https://via.placeholder.com/600x800/e3f2fd/1a1f4d?text=Scientists+in+FullGuard"
+                            alt="Scientists wearing FullGuard lab coats" class="hero-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PROBLEM STATEMENT SECTION
+         ======================================== -->
+    <section class="problem-section">
+        <div class="container">
+            <h2>You've done serious work. Your lab coat should show it.</h2>
+            <p class="subheading">Your current coat has been through a lot:</p>
+
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <span>Yellowing stains and stubborn stains</span>
+                </div>
+                <div class="problem-item">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <span>Boxy fit that photographs terribly</span>
+                </div>
+                <div class="problem-item">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <span>Awkward sleeves that slide up or drag over your hands</span>
+                </div>
+                <div class="problem-item">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <span>Not enough pockets where you actually need them</span>
+                </div>
+            </div>
+
+            <p class="closing-statement">
+                You've improved as a scientist. Your lab coat hasn't. It's time to upgrade the one thing you wear almost
+                every day in the lab.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PRODUCT INTRODUCTION SECTION
+         ======================================== -->
+    <section class="product-intro-section" id="product-intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="product-image-container">
+                        <div class="product-image-frame">
+                            <!-- REPLACE: Product image - FullGuard lab coat on model (approx 500x700px) -->
+                            <!-- Suggested filename: product-intro.jpg -->
+                            <img src="https://via.placeholder.com/500x700/ffffff/1a1f4d?text=FullGuard+Lab+Coat"
+                                alt="FullGuard lab coat" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="product-intro-content">
+                        <p class="product-eyebrow">Meet FullGuard™</p>
+                        <h2 class="product-headline">the lab coat you actually want to wear.</h2>
+                        <p class="product-description">
+                            FullGuard is a modern, scientist-designed lab coat that combines professional presentation,
+                            functional details, and everyday comfort.
+                        </p>
+                        <ul class="product-features-list">
+                            <li>Put-together during lab meetings and presentations</li>
+                            <li>Confident when you step in front of students or supervisors</li>
+                            <li>Comfortable during long days at the bench</li>
+                        </ul>
+                        <p class="product-description">
+                            <strong>This isn't just a new coat. It's an upgrade to how you show up in the lab.</strong>
+                        </p>
+                        <a href="#features" class="btn-primary-custom">View Features & Sizing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FEATURES SECTION
+         ======================================== -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2>Features That Fix What Old Coats Get Wrong</h2>
+            <p class="subheading">Designed after listening to real scientists.</p>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Modern collar</h4>
+                        <p>Keeps your neckline clean and professional – no floppy, dated lapels.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Deep hip pockets</h4>
+                        <p>Plenty of space for notes, gloves, markers, or your phone between experiments.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Ribbed knit cuffs</h4>
+                        <p>Snug, soft, and protective so sleeves stay where they're supposed to.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Six-snap front closure</h4>
+                        <p>Quick to open and close, with a sleek, tailored front.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Clean silhouette, better fit</h4>
+                        <p>Designed to give structure without feeling stiff, so you look sharp, not boxy.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <div class="icon-circle">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Smart chest pockets</h4>
+                        <p>Dual chest pockets with dedicated slots for pens and a ruler, so you're never digging around.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         BENEFITS SECTION
+         ======================================== -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <h2>Look the part. Feel the difference.</h2>
+
+            <div class="benefits-container">
+                <!-- Decorative stars -->
+                <span class="star-decoration star-1">★</span>
+                <span class="star-decoration star-2">★</span>
+
+                <div class="benefits-center-image">
+                    <!-- REPLACE: Central image - Scientist in FullGuard (approx 400x600px) -->
+                    <!-- Suggested filename: benefits-center.jpg -->
+                    <img src="https://via.placeholder.com/400x600/ffffff/1a1f4d?text=Scientist+Portrait"
+                        alt="Confident scientist in FullGuard">
+                </div>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h4>Credibility</h4>
+                        <p>You look like you take the work seriously.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Confidence</h4>
+                        <p>You stop worrying about how you look and focus on the science</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Comfort</h4>
+                        <p>Lightweight, breathable fabric that moves with you.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="benefits-closing">
+                From walking into group meeting to taking photos for a poster or LinkedIn, FullGuard helps you show up
+                like the scientist you've worked hard to become.
+            </p>
+
+            <div class="benefits-cta">
+                <a href="#shop" class="btn-primary-custom">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         COMPARISON TABLE SECTION
+         ======================================== -->
+    <section class="comparison-section" id="comparison">
+        <div class="container">
+            <h2>Old Lab Coat vs FullGuard</h2>
+            <p class="subheading">The difference is obvious.</p>
+
+            <div class="comparison-table">
+                <!-- Old Lab Coat Column -->
+                <div class="comparison-column">
+                    <div class="comparison-header">
+                        <p class="comparison-badge">Basic</p>
+                        <h3 class="comparison-title">Your Old Lab Coat</h3>
+                    </div>
+                    <div class="comparison-divider"></div>
+                    <ul class="comparison-list">
+                        <li>
+                            <i class="bi bi-x-circle"></i>
+                            <span>Faded, stained, or yellowing</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-x-circle"></i>
+                            <span>Boxy, generic cut</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-x-circle"></i>
+                            <span>Floppy collar that never sits right</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-x-circle"></i>
+                            <span>Loose or baggy sleeves</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-x-circle"></i>
+                            <span>Random pockets that collect junk</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-x-circle"></i>
+                            <span>Feels like "just another requirement"</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- FullGuard Column -->
+                <div class="comparison-column premium">
+                    <div class="comparison-header">
+                        <p class="comparison-badge">Premium</p>
+                        <h3 class="comparison-title">FullGuard™ Lab Coat</h3>
+                    </div>
+                    <div class="comparison-divider"></div>
+                    <ul class="comparison-list">
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Crisp white+ modern design built to look good over time</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Tailored silhouette with a clean line</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Structured mandarin collar for a polished profile</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Ribbed knit cuffs that stay put and protect</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Smart pocket layout with pen & ruler slots + deep hip pockets</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Feels like gear you're proud to wear</span>
+                        </li>
+                    </ul>
+                    <a href="#shop" class="btn-primary-custom" style="width: 100%;">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PROCESS/STEPS SECTION
+         ======================================== -->
+    <section class="process-section">
+        <div class="container">
+            <h2>Upgrading is easy.</h2>
+
+            <div class="process-steps-container">
+                <!-- Step 1 -->
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Choose your size</h4>
+                        <p>using our simple size guide</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Add FullGuard to your cart</h4>
+                        <p>and check out in a few clicks.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Get your new coat</h4>
+                        <p>and retire your old one with no regrets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-cta">
+                <a href="#shop" class="btn-primary-custom">Start Shopping</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TARGET AUDIENCE SECTION
+         ======================================== -->
+    <section class="audience-section">
+        <div class="container">
+            <h2>Built for real working scientists and students.</h2>
+
+            <div class="audience-grid">
+                <div class="audience-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Graduate and PhD students</span>
+                </div>
+                <div class="audience-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Postdocs and research scientists</span>
+                </div>
+                <div class="audience-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Clinical & diagnostic lab staff</span>
+                </div>
+                <div class="audience-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Teaching assistants and instructors</span>
+                </div>
+            </div>
+
+            <p class="audience-description">
+                From university labs to biotech benches, FullGuard is quickly becoming the go-to upgrade for scientists
+                tired of flimsy, generic coats.
+            </p>
+
+            <!-- Testimonial Section -->
+            <div class="testimonial-section">
+                <div class="testimonial-icon">
+                    <i class="bi bi-chat-quote"></i>
+                </div>
+                <h3 class="testimonial-heading">What students, TA & parents are saying</h3>
+                <p class="testimonial-text">
+                    "This AI tutor has transformed my learning experience as a student. With its interactive
+                    simulations, personalized feedback, and 24/7 accessibility, studying science has become engaging,
+                    effective, and convenient. I am now more confident, understand complex topics better, and achieve
+                    higher grades. This app is truly a game-changer!"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FAQ SECTION
+         ======================================== -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="faq-intro">
+                        <h2>Frequently asked questions</h2>
+                        <p>Here are some frequently asked questions about ScienceAide and FullGuard lab coats</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    What sizes do you offer?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    FullGuard lab coats are available in sizes XS through 4XL. We provide a detailed
+                                    size guide to help you find your perfect fit. Our tailored design ensures a
+                                    flattering, professional look across all sizes.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                    How do I care for my FullGuard lab coat?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    FullGuard lab coats are machine washable and designed for frequent washing. Simply
+                                    machine wash cold, tumble dry low, and iron on medium heat if needed. The
+                                    wrinkle-resistant fabric maintains its crisp appearance even after multiple washes.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                    What material is the lab coat made from?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    FullGuard is made from a premium blend of polyester and cotton that's lightweight,
+                                    breathable, and durable. The fabric is designed to resist stains, wrinkles, and
+                                    yellowing over time while providing all-day comfort.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                    Do you offer returns or exchanges?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! We offer a 30-day return and exchange policy. If you're not completely
+                                    satisfied with your FullGuard lab coat, you can return it for a full refund or
+                                    exchange it for a different size.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                    Do you offer bulk pricing for labs or universities?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! We offer special bulk pricing for labs, research groups, and
+                                    universities ordering 10 or more coats. We also provide custom embroidery options
+                                    for department names and logos. Contact us for a custom quote.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FINAL CTA SECTION
+         ======================================== -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="cta-images-grid">
+                        <!-- REPLACE: 4 product detail images (each approx 250x200px) -->
+                        <!-- Suggested filenames: cta-detail-1.jpg, cta-detail-2.jpg, etc. -->
+                        <div class="cta-image-item">
+                            <img src="https://via.placeholder.com/250x200/ffffff/1a1f4d?text=Detail+1"
+                                alt="Lab coat detail 1">
+                        </div>
+                        <div class="cta-image-item">
+                            <img src="https://via.placeholder.com/250x200/ffffff/1a1f4d?text=Detail+2"
+                                alt="Lab coat detail 2">
+                        </div>
+                        <div class="cta-image-item">
+                            <img src="https://via.placeholder.com/250x200/ffffff/1a1f4d?text=Detail+3"
+                                alt="Lab coat detail 3">
+                        </div>
+                        <div class="cta-image-item">
+                            <img src="https://via.placeholder.com/250x200/ffffff/1a1f4d?text=Detail+4"
+                                alt="Lab coat detail 4">
+                        </div>
+                    </div>
+                    <span class="cta-badge">Only 200 left</span>
+                </div>
+                <div class="col-lg-7">
+                    <div class="cta-content">
+                        <h2>Ready to retire your old lab coat?</h2>
+                        <p>You've upgraded your skills, your experiments, and your responsibilities. It's time your lab
+                            coat kept up.</p>
+                        <a href="#shop" class="btn-primary-custom">Shop FullGuard Lab Coats</a>
+                        <br>
+                        <a href="#features" class="cta-secondary-link">View FullGuard Features & Fit Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER SECTION
+         ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-md-3 mb-4">
+                    <h5>ScienceAide</h5>
+                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 14px;">
+                        Modern lab coats designed by scientists, for scientists. Elevating how you show up in the lab.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Shop -->
+                <div class="col-md-3 mb-4">
+                    <h5>Shop</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Lab Coats</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Bulk Orders</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="col-md-3 mb-4">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div class="col-md-3 mb-4">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ScienceAide. All rights reserved. | <a href="#" style="color: inherit;">Privacy
+                        Policy</a> | <a href="#" style="color: inherit;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
