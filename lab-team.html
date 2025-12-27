@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Equip your entire lab team with FullGuard™ lab coats. Professional appearance, bulk ordering, and custom embroidery available for research teams, clinical labs, and teaching facilities.">
+    <meta name="keywords"
+        content="lab coat, team lab coats, bulk lab coats, research lab, FullGuard, ScienceAide, lab team uniforms">
+    <title>FullGuard™ Lab Team - Professional Lab Coats for Your Entire Team | ScienceAide</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           CONFIGURATION SECTION
+           Reused from index.html with team-specific additions
+           ======================================== */
+
+        :root {
+            /* FIGMA EXACT COLORS */
+            --color-primary-navy: #010028;
+            --color-primary-blue: #008AED;
+            --color-secondary-dark: #1B1A3E;
+            --color-light-gray: #E6E6EA;
+            --color-purple: #AD85FF;
+            --color-green: #08FFE1;
+            --color-navy-medium: #173264;
+            --color-teal: #003252;
+
+            /* Neutral Colors */
+            --color-white: #FFFFFF;
+            --color-dark-text: #010028;
+            --color-gray-text: #1B1A3E;
+            --color-border: #e0e0e0;
+
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+            /* Font Sizes */
+            --font-size-h2: 52px;
+            --font-size-h4: 28px;
+            --font-size-main-text: 20px;
+            --font-size-paragraph: 16px;
+            --font-size-h3: 42px;
+
+            /* Line Heights */
+            --line-height-heading: 1;
+            --line-height-main: 1.4;
+            --line-height-paragraph: 1.5;
+            --line-height-nav: 2;
+
+            /* Font Weights */
+            --font-weight-extralight: 200;
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+
+            /* Spacing */
+            --spacing-8: 8px;
+            --spacing-12: 12px;
+            --spacing-16: 16px;
+            --spacing-20: 20px;
+            --spacing-28: 28px;
+            --spacing-32: 32px;
+            --spacing-40: 40px;
+            --spacing-60: 60px;
+            --spacing-80: 80px;
+            --spacing-100: 100px;
+            --spacing-120: 120px;
+
+            /* Container */
+            --container-max-width: 1440px;
+            --container-padding: 120px;
+
+            /* Border Radius */
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 20px;
+            --border-radius-2xl: 32px;
+            --border-radius-pill: 40px;
+            --border-radius-round: 58px;
+
+            /* Transitions */
+            --transition-base: all 0.3s ease;
+        }
+
+        /* ========================================
+           GLOBAL STYLES
+           ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            font-size: var(--font-size-paragraph);
+            line-height: var(--line-height-paragraph);
+            color: var(--color-dark-text);
+            background-color: #FFFFFF;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background gradient for page */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: -371px;
+            width: 2300px;
+            height: 4147px;
+            background: radial-gradient(ellipse at 50% 50%,
+                    rgba(2, 149, 255, 0.15) 0%,
+                    rgba(173, 133, 255, 0.12) 50%,
+                    rgba(8, 255, 225, 0.08) 100%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        nav,
+        section,
+        footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-heading);
+            margin-bottom: var(--spacing-20);
+        }
+
+        h2 {
+            font-size: var(--font-size-h2);
+        }
+
+        h4 {
+            font-size: var(--font-size-h4);
+        }
+
+        p {
+            margin-bottom: var(--spacing-20);
+            font-size: var(--font-size-paragraph);
+            line-height: var(--line-height-paragraph);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-base);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ========================================
+           COMPONENT STYLES
+           ======================================== */
+
+        /* Buttons */
+        .btn-primary-custom {
+            background-color: var(--color-primary-blue);
+            color: var(--color-white);
+            padding: var(--spacing-20) var(--spacing-40);
+            border-radius: var(--border-radius-pill);
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-main-text);
+            line-height: var(--line-height-heading);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-base);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #0076cc;
+            color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 138, 237, 0.3);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(122.483deg, #42B0FF 4.08%, #AD85FF 49.729%, #08FFE1 97.72%);
+            color: var(--color-secondary-dark);
+            padding: var(--spacing-20) var(--spacing-40);
+            border-radius: var(--border-radius-pill);
+            font-weight: var(--font-weight-medium);
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-base);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-gradient:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: linear-gradient(to bottom, rgba(173, 133, 255, 0.05) 0.552%, rgba(2, 149, 255, 0.05) 99.448%);
+            padding: var(--spacing-20);
+            border-radius: var(--border-radius-md);
+            box-shadow: 0px 4px 31.5px 0px rgba(0, 0, 0, 0.12);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-12);
+        }
+
+        .feature-card-icon {
+            width: 49.48px;
+            height: 49.48px;
+        }
+
+        .feature-card-title {
+            font-size: var(--font-size-main-text);
+            font-weight: var(--font-weight-medium);
+            line-height: var(--line-height-main);
+            color: var(--color-dark-text);
+            margin-bottom: 5px;
+        }
+
+        .feature-card-description {
+            font-size: var(--font-size-paragraph);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--line-height-paragraph);
+            color: var(--color-dark-text);
+        }
+
+
+        /* ========================================
+           NAVIGATION BAR
+           ======================================== */
+
+        .navbar-custom {
+            background-color: var(--color-primary-navy);
+            padding: var(--spacing-16) var(--spacing-32);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-custom .container {
+            max-width: var(--container-max-width);
+        }
+
+        .navbar-custom .navbar-brand {
+            color: var(--color-white);
+            font-size: 24px;
+            font-weight: var(--font-weight-bold);
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-custom .navbar-brand img {
+            height: 51px;
+            width: auto;
+            display: block;
+        }
+
+        .navbar-custom .nav-link {
+            color: var(--color-white);
+            margin: 0 var(--spacing-40);
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-main-text);
+            line-height: var(--line-height-nav);
+            padding: var(--spacing-8) var(--spacing-32);
+            border-radius: var(--border-radius-pill);
+            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.01);
+            transition: var(--transition-base);
+        }
+
+        .navbar-custom .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-custom .cart-icon-container {
+            position: relative;
+            display: inline-block;
+            margin-right: var(--spacing-20);
+        }
+
+        .navbar-custom .cart-icon {
+            color: var(--color-white);
+            font-size: 24px;
+        }
+
+        .navbar-custom .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: #008AED;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #010028;
+        }
+
+        .navbar-custom .nav-action-link {
+            color: var(--color-white);
+            font-size: var(--font-size-main-text);
+            font-weight: var(--font-weight-medium);
+            margin-right: var(--spacing-20);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        .navbar-custom .nav-action-link:hover {
+            color: var(--color-primary-blue);
+        }
+
+        .navbar-custom .btn-login {
+            color: var(--color-white);
+            border: 1px solid #0295ff;
+            border-radius: var(--border-radius-pill);
+            padding: var(--spacing-16) var(--spacing-32);
+            font-size: var(--font-size-main-text);
+            font-weight: var(--font-weight-medium);
+            background: transparent;
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        .navbar-custom .btn-login:hover {
+            border-color: var(--color-white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Navbar Tablet Responsive */
+        @media (max-width: 1024px) {
+            .navbar-custom .nav-link {
+                margin: 0 var(--spacing-20);
+                padding: var(--spacing-8) var(--spacing-20);
+                font-size: 16px;
+            }
+        }
+
+        /* Navbar Mobile Responsive */
+        @media (max-width: 991px) {
+            .navbar-custom {
+                padding: var(--spacing-12) var(--spacing-20);
+            }
+
+            .navbar-custom .navbar-brand {
+                font-size: 20px;
+            }
+
+            .navbar-custom .navbar-brand img {
+                height: 32px;
+            }
+
+            .navbar-custom .navbar-collapse {
+                background-color: var(--color-primary-navy);
+                padding: var(--spacing-20);
+                margin-top: var(--spacing-16);
+                border-radius: var(--border-radius-md);
+            }
+
+            .navbar-custom .nav-link {
+                margin: var(--spacing-8) 0;
+                padding: var(--spacing-12) var(--spacing-20);
+                font-size: 16px;
+                text-align: left;
+                display: block;
+            }
+
+            .navbar-custom .d-flex {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: var(--spacing-12);
+                margin-top: var(--spacing-16);
+            }
+
+            .navbar-custom .cart-icon-container {
+                margin-right: 0;
+            }
+
+            .navbar-custom .nav-action-link,
+            .navbar-custom .btn-login {
+                width: 100%;
+                text-align: center;
+                display: block;
+                padding: var(--spacing-12) var(--spacing-20);
+            }
+        }
+
+        /* ========================================
+           HERO SECTION - EXACT Figma Specs
+           Container approach with margins (same as index.html)
+           ======================================== */
+
+        .hero-section {
+            background-color: transparent;
+            position: relative;
+            padding: var(--spacing-40) var(--spacing-40);
+        }
+
+        .hero-container {
+            background: radial-gradient(ellipse at 30% 50%, rgba(0, 135, 180, 1) 0%, rgba(0, 127, 171, 1) 14.5%, rgba(1, 102, 144, 1) 52.6%, rgba(1, 76, 113, 1) 76.3%, rgba(0, 50, 82, 1) 100%) !important;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-80) var(--spacing-80) var(--spacing-40);
+            position: relative;
+            overflow: hidden;
+            min-height: 624px;
+        }
+
+        .hero-container::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -59px;
+            width: 269px;
+            height: 685px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            font-size: 24px;
+            color: #E6E6EA;
+            font-weight: var(--font-weight-medium);
+            line-height: var(--line-height-heading);
+            margin-bottom: var(--spacing-28);
+        }
+
+        .hero-headline {
+            font-size: var(--font-size-h2);
+            color: var(--color-white);
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-heading);
+            margin-bottom: var(--spacing-28);
+            max-width: 656px;
+        }
+
+        .hero-description {
+            font-size: var(--font-size-main-text);
+            color: var(--color-white);
+            font-weight: var(--font-weight-medium);
+            line-height: var(--line-height-main);
+            margin-bottom: var(--spacing-60);
+            max-width: 708px;
+        }
+
+        .hero-image-container {
+            position: relative;
+            z-index: 2;
+            text-align: right;
+        }
+
+        .hero-image {
+            border-radius: var(--border-radius-lg);
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Hero Tablet Responsive */
+        @media (max-width: 1024px) {
+            .hero-section {
+                padding: var(--spacing-32);
+            }
+
+            .hero-container {
+                padding: var(--spacing-60) var(--spacing-40);
+            }
+
+            .hero-headline {
+                font-size: 42px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+        }
+
+        /* Hero Mobile Responsive */
+        @media (max-width: 991px) {
+            .hero-section {
+                padding: var(--spacing-20);
+            }
+
+            .hero-container {
+                padding: var(--spacing-40) var(--spacing-20);
+                border-radius: var(--border-radius-md);
+                min-height: auto;
+            }
+
+            .hero-eyebrow {
+                font-size: 18px;
+                margin-bottom: var(--spacing-20);
+            }
+
+            .hero-headline {
+                font-size: 32px;
+                margin-bottom: var(--spacing-20);
+            }
+
+            .hero-description {
+                font-size: 16px;
+                margin-bottom: var(--spacing-32);
+            }
+
+            .hero-image-container {
+                margin-top: var(--spacing-32);
+                text-align: center;
+            }
+
+            .btn-gradient {
+                font-size: 18px;
+                padding: var(--spacing-16) var(--spacing-32);
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* ========================================
+           SECTIONS
+           ======================================== */
+
+        section {
+            padding: var(--spacing-80) var(--spacing-120);
+        }
+
+        .section-heading {
+            font-size: var(--font-size-h2);
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-heading);
+            text-align: center;
+            color: var(--color-dark-text);
+            margin-bottom: var(--spacing-20);
+        }
+
+        .section-subheading {
+            font-size: var(--font-size-main-text);
+            font-weight: var(--font-weight-medium);
+            line-height: var(--line-height-main);
+            text-align: center;
+            color: var(--color-dark-text);
+            margin-bottom: var(--spacing-40);
+        }
+
+        /* Features Grid Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-12);
+            margin-bottom: var(--spacing-40);
+        }
+
+        /* Credibility Section */
+        .credibility-section {
+            background: rgba(0, 138, 237, 0.16);
+            border-radius: var(--border-radius-sm);
+            padding: var(--spacing-60);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .credibility-gradient-orb {
+            position: absolute;
+            right: -156px;
+            top: 77px;
+            width: 508px;
+            height: 708px;
+            border-radius: 567px;
+            opacity: 0.5;
+            background: radial-gradient(circle,
+                    rgba(2, 149, 255, 0.5) 0%,
+                    rgba(45, 145, 255, 0.5) 12.1%,
+                    rgba(88, 141, 255, 0.5) 24.3%,
+                    rgba(173, 133, 255, 0.5) 48.7%,
+                    rgba(91, 194, 240, 0.25) 74.3%,
+                    rgba(8, 255, 225, 0) 100%);
+        }
+
+        .credibility-text {
+            font-size: var(--font-size-main-text);
+            font-weight: var(--font-weight-medium);
+            line-height: var(--line-height-main);
+            color: #67667E;
+            margin-bottom: var(--spacing-20);
+        }
+
+        .credibility-outcome-label {
+            font-size: var(--font-size-h4);
+            font-weight: var(--font-weight-semibold);
+            line-height: var(--line-height-heading);
+            color: var(--color-secondary-dark);
+            margin-bottom: var(--spacing-20);
+        }
+
+        .credibility-main-text {
+            font-size: var(--font-size-h4);
+            font-weight: var(--font-weight-semibold);
+            line-height: var(--line-height-heading);
+            color: var(--color-dark-text);
+            margin-bottom: var(--spacing-8);
+        }
+
+        .credibility-gradient-text {
+            font-size: var(--font-size-h2);
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-heading);
+            background: linear-gradient(162.18deg, #0295FF 4.08%, #AD85FF 49.729%, #08FFE1 97.72%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-8);
+        }
+
+        .credibility-image-container {
+            position: absolute;
+            right: 197px;
+            top: -37px;
+            width: 313px;
+            height: 469px;
+            z-index: 10;
+        }
+
+
+        /* Comparison Section */
+        .comparison-section {
+            background-color: var(--color-secondary-dark);
+            padding: var(--spacing-80) var(--spacing-120);
+            color: var(--color-white);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-40);
+            margin-top: var(--spacing-40);
+        }
+
+        .comparison-column {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: var(--spacing-40);
+            border-radius: var(--border-radius-lg);
+        }
+
+        .comparison-column-title {
+            font-size: var(--font-size-h4);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-20);
+        }
+
+        .comparison-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comparison-list li {
+            font-size: var(--font-size-main-text);
+            line-height: 40px;
+            margin-bottom: var(--spacing-12);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-12);
+        }
+
+        /* Product Details Section */
+        .product-details-section {
+            background-color: var(--color-white);
+            padding: var(--spacing-80) var(--spacing-120);
+        }
+
+        .product-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-60);
+            align-items: center;
+        }
+
+        .product-detail-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--spacing-28);
+        }
+
+        .product-detail-list li {
+            font-size: var(--font-size-paragraph);
+            line-height: var(--line-height-paragraph);
+            color: var(--color-dark-text);
+            margin-bottom: var(--spacing-12);
+            padding-left: var(--spacing-28);
+            position: relative;
+        }
+
+        .product-detail-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary-blue);
+            font-weight: bold;
+        }
+
+        /* Ordering Process Section */
+        .ordering-process-section {
+            background-color: var(--color-white);
+            padding: var(--spacing-80) var(--spacing-120);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--spacing-20);
+            margin-top: var(--spacing-40);
+        }
+
+        .process-step {
+            background-color: var(--color-light-gray);
+            padding: var(--spacing-20) var(--spacing-40);
+            border-radius: var(--border-radius-md);
+            text-align: center;
+        }
+
+        .process-step-number {
+            font-size: var(--font-size-h3);
+            font-weight: var(--font-weight-extralight);
+            line-height: var(--line-height-heading);
+            color: var(--color-primary-blue);
+            margin-bottom: var(--spacing-12);
+        }
+
+        .process-step-text {
+            font-size: var(--font-size-paragraph);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--line-height-paragraph);
+            color: var(--color-dark-text);
+        }
+
+        /* CTA Section */
+        .cta-team-section {
+            background-color: var(--color-navy-medium);
+            padding: var(--spacing-80) var(--spacing-120);
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .cta-badge {
+            background-color: var(--color-green);
+            color: var(--color-primary-navy);
+            padding: var(--spacing-8) var(--spacing-20);
+            border-radius: var(--border-radius-pill);
+            font-size: var(--font-size-paragraph);
+            font-weight: var(--font-weight-semibold);
+            display: inline-block;
+            margin-bottom: var(--spacing-20);
+        }
+
+        .cta-images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-16);
+            margin-bottom: var(--spacing-40);
+        }
+
+        .cta-image-item {
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* FAQ Section - EXACT Figma Specs (Same as index.html) */
+        .faq-section {
+            background-color: var(--color-white);
+            padding: var(--spacing-60) var(--spacing-100);
+        }
+
+        .faq-container {
+            display: flex;
+            gap: 2px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .faq-intro {
+            flex: 0 0 auto;
+            width: 501px;
+            margin-right: 48px;
+        }
+
+        .faq-intro h2 {
+            font-size: var(--font-size-h2);
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-heading);
+            color: var(--color-dark-text);
+            margin-bottom: var(--spacing-20);
+            max-width: 501px;
+        }
+
+        .faq-intro p {
+            font-size: var(--font-size-main-text);
+            font-weight: var(--font-weight-medium);
+            line-height: 2;
+            color: var(--color-dark-text);
+            max-width: 440px;
+        }
+
+        .faq-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-20);
+        }
+
+        .faq-items {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-20);
+        }
+
+        .faq-list .accordion-item {
+            max-width: 703px;
+            background-color: rgba(27, 26, 62, 0.1);
+            border-radius: 20px;
+            border: none;
+        }
+
+        .accordion-button {
+            font-family: var(--font-primary);
+            font-size: 28px !important;
+            font-weight: var(--font-weight-semibold);
+            line-height: normal;
+            color: var(--color-dark-text);
+            background-color: transparent !important;
+            border: none;
+            box-shadow: none !important;
+            padding: 28px !important;
+            min-height: 84px;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: var(--color-dark-text);
+            background-color: transparent !important;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none !important;
+            border: none;
+        }
+
+        .accordion-button::after {
+            width: 21px;
+            height: 10.5px;
+            background-image: url("data:image/svg+xml,%3Csvg width='21' height='11' viewBox='0 0 21 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L10.5 10L20 1' stroke='%23010028' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-size: 21px 10.5px;
+            transform: rotate(0deg);
+            flex-shrink: 0;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            transform: rotate(-180deg);
+        }
+
+        .accordion-body {
+            font-family: var(--font-primary);
+            font-size: 20px;
+            font-weight: var(--font-weight-medium);
+            line-height: 28px;
+            color: var(--color-dark-text);
+            padding: 0 28px 28px 28px !important;
+        }
+
+        .accordion-collapse {
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-primary-navy);
+            color: var(--color-white);
+            padding: var(--spacing-60) 0 var(--spacing-32);
+        }
+
+        .footer h5 {
+            font-size: 18px;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-20);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--spacing-12);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            transition: var(--transition-base);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-white);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-16);
+            margin-top: var(--spacing-20);
+        }
+
+        .footer-social a {
+            color: var(--color-white);
+            font-size: 20px;
+            transition: var(--transition-base);
+        }
+
+        .footer-social a:hover {
+            color: var(--color-primary-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: var(--spacing-40);
+            padding-top: var(--spacing-20);
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+
+        @media (max-width: 1024px) {
+            :root {
+                --font-size-h2: 42px;
+                --font-size-h3: 36px;
+                --font-size-h4: 24px;
+                --font-size-main-text: 18px;
+                --container-padding: 60px;
+            }
+
+            section {
+                padding: var(--spacing-60) var(--spacing-60);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .comparison-grid,
+            .product-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --font-size-h2: 32px;
+                --font-size-h3: 28px;
+                --font-size-h4: 20px;
+                --font-size-main-text: 16px;
+                --font-size-paragraph: 14px;
+                --container-padding: 20px;
+            }
+
+            section {
+                padding: var(--spacing-40) var(--spacing-20);
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-images-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-gradient {
+                width: 100%;
+                font-size: 18px;
+            }
+
+            /* Responsive styles for Lab Environments section pills */
+            section[style*="padding: 40px 120px"] {
+                padding: 40px 20px !important;
+            }
+
+            section[style*="padding: 40px 120px"] h2 {
+                font-size: 32px !important;
+            }
+
+            section[style*="padding: 40px 120px"] p {
+                font-size: 16px !important;
+                line-height: 24px !important;
+                max-width: 100% !important;
+            }
+
+            /* Make pills stack on mobile and adjust text size */
+            section div[style*="border-radius: 58px"] p {
+                font-size: 16px !important;
+                line-height: 24px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================
+         NAVIGATION BAR
+         ======================================== -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="scienceaide-logo.png" alt="ScienceAide Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="cart-icon-container">
+                        <a href="#cart" class="cart-icon">
+                            <i class="bi bi-cart3"></i>
+                        </a>
+                        <span class="cart-badge">2</span>
+                    </div>
+                    <a href="#track-order" class="nav-action-link">Track order</a>
+                    <a href="#login" class="btn-login">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         HERO SECTION - Lab Team
+         ======================================== -->
+    <section class="hero-section">
+        <div class="container-fluid px-0">
+            <!-- Hero container with gradient background and rounded corners -->
+            <div class="hero-container"
+                style="background: radial-gradient(ellipse at 30% 50%, rgba(0, 135, 180, 1) 0%, rgba(0, 127, 171, 1) 14.5%, rgba(1, 102, 144, 1) 52.6%, rgba(1, 76, 113, 1) 76.3%, rgba(0, 50, 82, 1) 100%)">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 hero-content">
+                        <p class="hero-eyebrow">For labs that take presentation seriously</p>
+                        <h1 class="hero-headline">Your Lab, Upgraded.</h1>
+                        <p class="hero-description">
+                            Equip your team with lab coats that fit, function, and impress. Bulk orders & custom
+                            embroidery available.
+                        </p>
+                        <!-- Gradient button with exact Figma styling -->
+                        <a href="#quote" class="btn-gradient">Request a Quote</a>
+                    </div>
+                    <div class="col-lg-6 hero-image-container">
+                        <!-- PLACEHOLDER: Replace with team lab photo -->
+                        <img src="images/scientists.png" alt="Lab Team wearing FullGuard lab coats" class="hero-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FEATURES SECTION
+         ======================================== -->
+    <section>
+        <h2 class="section-heading" style="max-width: 794px; margin-left: auto; margin-right: auto;">Built for labs that
+            take presentation seriously.</h2>
+        <p class="section-subheading">Your team deserves lab coats that look sharp, feel great, and are designed for
+            everyday scientific work. FullGuard is engineered to support teams who interact with students, patients,
+            researchers, or executives — where professionalism and performance matter equally.</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="bi bi-check-circle feature-card-icon"
+                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <div>
+                    <h3 class="feature-card-title">Modern collar</h3>
+                    <p class="feature-card-description">Keeps your neckline clean and professional – no floppy, dated
+                        lapels.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <i class="bi bi-check-circle feature-card-icon"
+                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <div>
+                    <h3 class="feature-card-title">Ribbed knit cuffs</h3>
+                    <p class="feature-card-description">Snug, soft, and protective so sleeves stay where they're
+                        supposed to.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <i class="bi bi-shield-check feature-card-icon"
+                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <div>
+                    <h3 class="feature-card-title">Clean silhouette, better fit</h3>
+                    <p class="feature-card-description">Designed to give structure without feeling stiff, so you look
+                        sharp, not boxy.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <i class="bi bi-shield-check feature-card-icon"
+                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <div>
+                    <h3 class="feature-card-title">Deep hip pockets</h3>
+                    <p class="feature-card-description">Plenty of space for notes, gloves, markers, or your phone
+                        between experiments.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <i class="bi bi-check-circle feature-card-icon"
+                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <div>
+                    <h3 class="feature-card-title">Six-snap front closure</h3>
+                    <p class="feature-card-description">Quick to open and close, with a sleek, tailored front.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <i class="bi bi-clipboard-check feature-card-icon"
+                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <div>
+                    <h3 class="feature-card-title">Smart chest pockets</h3>
+                    <p class="feature-card-description">Dual chest pockets with dedicated slots for pens and a ruler, so
+                        you're never digging around.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Credibility Section -->
+        <div class="credibility-section mt-5" style="position: relative;">
+            <div class="credibility-gradient-orb"></div>
+            <div class="row">
+                <div class="col-12" style="position: relative;">
+                    <p class="credibility-text">Whether you run a research lab, clinical center, teaching facility, or
+                        diagnostic group…<br>FullGuard elevates your team's presence.</p>
+                    <p class="credibility-outcome-label">Outcome:</p>
+                    <p class="credibility-main-text">Your team looks</p>
+                    <p class="credibility-gradient-text">Aligned. Clean. Credible.</p>
+                    <p class="credibility-main-text" style="max-width: 823px;">The way a modern lab should.</p>
+
+                    <!-- Star decorations -->
+                    <div
+                        style="position: absolute; right: 120px; bottom: 80px; font-size: 40px; color: var(--color-purple);">
+                        ★</div>
+                    <div
+                        style="position: absolute; left: 43px; bottom: 120px; font-size: 34px; color: var(--color-purple);">
+                        ★</div>
+
+                    <!-- Image placeholder -->
+                    <div class="credibility-image-container">
+                        <!-- PLACEHOLDER: Replace with lady and man image -->
+                        <img src="images/confidentScientistinFullGuard.png" alt="Professional Scientists"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         LAB ENVIRONMENTS SECTION - EXACT Figma Specs
+         ======================================== -->
+    <section style="padding: 40px 120px; background-color: #FFFFFF;">
+        <h2
+            style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 52px; line-height: normal; text-align: center; color: #010028; margin-bottom: 20px;">
+            Built to handle real lab environments.</h2>
+        <p
+            style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; text-align: center; color: #010028; max-width: 982px; margin: 0 auto 20px;">
+            FullGuard lab coats are made from durable, wrinkle-resistant, machine-washable fabric designed for long
+            shifts and frequent wash cycles.</p>
+
+        <!-- Check pills container with exact Figma specs -->
+        <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-start; justify-content: center; width: 100%;">
+            <!-- Pill 1 -->
+            <div
+                style="background-color: rgba(173, 133, 255, 0.15); display: flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px 12px 12px; border-radius: 58px;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#AD85FF" />
+                    <path d="M16.5 9L10.5 15L7.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <p
+                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0; white-space: nowrap;">
+                    Consistent quality across all sizes (XS–4XL)</p>
+            </div>
+            <!-- Pill 2 -->
+            <div
+                style="background-color: rgba(173, 133, 255, 0.15); display: flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px 12px 12px; border-radius: 58px;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#AD85FF" />
+                    <path d="M16.5 9L10.5 15L7.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <p
+                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0; white-space: nowrap;">
+                    Easy ordering for large teams</p>
+            </div>
+            <!-- Pill 3 -->
+            <div
+                style="background-color: rgba(173, 133, 255, 0.15); display: flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px 12px 12px; border-radius: 58px;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#AD85FF" />
+                    <path d="M16.5 9L10.5 15L7.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <p
+                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0; white-space: nowrap;">
+                    In-stock and ready to ship</p>
+            </div>
+            <!-- Pill 4 -->
+            <div
+                style="background-color: rgba(173, 133, 255, 0.15); display: flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px 12px 12px; border-radius: 58px;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#AD85FF" />
+                    <path d="M16.5 9L10.5 15L7.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <p
+                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0; white-space: nowrap;">
+                    Optional custom embroidery (names, departments, facility branding)</p>
+            </div>
+            <!-- Pill 5 -->
+            <div
+                style="background-color: rgba(173, 133, 255, 0.15); display: flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px 12px 12px; border-radius: 58px;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#AD85FF" />
+                    <path d="M16.5 9L10.5 15L7.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <p
+                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0; white-space: nowrap;">
+                    Volume pricing available for groups of 10–500+</p>
+            </div>
+        </div>
+
+        <!-- Closing text -->
+        <p
+            style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 28px; line-height: normal; text-align: center; color: #1b1a3e; margin: 0;">
+            This is more than a lab coat - it's a uniform you can rely on</p>
+    </section>
+
+    <!-- ========================================
+         COMPARISON SECTION - EXACT Figma Specs
+         Professional appearance = professional trust
+         ======================================== -->
+    <section style="background-color: #010028; padding: 80px 120px; color: #FFFFFF;">
+        <!-- Section heading -->
+        <h2
+            style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 52px; line-height: normal; text-align: center; color: #FFFFFF; margin-bottom: 20px;">
+            Professional appearance = professional trust</h2>
+        <p
+            style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 28px; line-height: normal; text-align: center; color: #E6E6EA; margin-bottom: 40px;">
+            Labs switch to FullGuard because it solves problems typical coats don't:</p>
+
+        <!-- Comparison container -->
+        <div style="background-color: #1B1A3E; border-radius: 20px; display: flex; width: 100%;">
+            <!-- Left column - Common Issues -->
+            <div style="flex: 1; padding: 40px; border-radius: 20px;">
+                <h3
+                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 42px; line-height: normal; color: #AD85FF; margin: 0 0 12px;">
+                    Common Issue in Labs</h3>
+                <!-- Horizontal line -->
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1); margin-bottom: 12px;"></div>
+
+                <!-- Issue items with separators -->
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
+                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Inconsistent look among staff</p>
+                </div>
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
+                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Coats that wrinkle easily</p>
+                </div>
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
+                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Cuffs that don't protect</p>
+                </div>
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
+                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Outdated collars</p>
+                </div>
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
+                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Lack of pockets</p>
+                </div>
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
+                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Hard to order in bulk</p>
+                </div>
+            </div>
+
+            <!-- Right column - How FullGuard Solves It -->
+            <div style="flex: 1; padding: 40px; border-radius: 20px;">
+                <h3
+                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 42px; line-height: normal; margin: 0 0 12px; background: linear-gradient(153.351deg, rgb(2, 149, 255) 4.08%, rgb(173, 133, 255) 49.729%, rgb(8, 255, 225) 97.72%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    How FullGuard Solves It</h3>
+                <!-- Horizontal line -->
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1); margin-bottom: 12px;"></div>
+
+                <!-- Solution items with separators -->
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#08FFE1" />
+                        <path d="M13 6L7.5 12L5 9.5" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Clean, cohesive fit across the entire team</p>
+                </div>
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#08FFE1" />
+                        <path d="M13 6L7.5 12L5 9.5" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Durable, anti-wrinkle fabric</p>
+                </div>
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#08FFE1" />
+                        <path d="M13 6L7.5 12L5 9.5" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Ribbed knit cuffs designed for real use</p>
+                </div>
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#08FFE1" />
+                        <path d="M13 6L7.5 12L5 9.5" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Modern mandarin collar (professional, clean)</p>
+                </div>
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#08FFE1" />
+                        <path d="M13 6L7.5 12L5 9.5" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Dual chest pockets + deep side pockets</p>
+                </div>
+                <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+
+                <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="9" fill="#08FFE1" />
+                        <path d="M13 6L7.5 12L5 9.5" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
+                        Simple quote system with bulk pricing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ScienceAide Supplies Section - Within same dark background -->
+        <div style="padding: 40px 120px 0;">
+            <p
+                style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 42px; line-height: normal; text-align: center; color: #FFFFFF; margin: 0 auto 20px; max-width: 762px;">
+                ScienceAide supplies lab coats to:</p>
+
+            <!-- Horizontal items with gradient background -->
+            <div
+                style="background: linear-gradient(156.801deg, rgba(2, 149, 255, 0.2) 4.08%, rgba(173, 133, 255, 0.2) 49.729%, rgba(8, 255, 225, 0.2) 97.72%); display: flex; gap: 33px; align-items: center; padding: 20px 40px; border-radius: 8px; flex-wrap: wrap; justify-content: center;">
+                <!-- Item 1 -->
+                <div
+                    style="display: flex; align-items: center; gap: 8px; padding: 8px 20px 8px 8px; border-radius: 8px;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#FFFFFF" />
+                        <path d="M16.5 9L10.5 15L7.5 12" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #FFFFFF; margin: 0;">
+                        University teaching labs</p>
+                </div>
+                <!-- Item 2 -->
+                <div
+                    style="display: flex; align-items: center; gap: 8px; padding: 8px 20px 8px 8px; border-radius: 8px;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#FFFFFF" />
+                        <path d="M16.5 9L10.5 15L7.5 12" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #FFFFFF; margin: 0; white-space: nowrap;">
+                        Research facilities</p>
+                </div>
+                <!-- Item 3 -->
+                <div
+                    style="display: flex; align-items: center; gap: 8px; padding: 8px 20px 8px 8px; border-radius: 8px;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#FFFFFF" />
+                        <path d="M16.5 9L10.5 15L7.5 12" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #FFFFFF; margin: 0; white-space: nowrap;">
+                        Clinical diagnostic centers</p>
+                </div>
+                <!-- Item 4 -->
+                <div
+                    style="display: flex; align-items: center; gap: 8px; padding: 8px 20px 8px 8px; border-radius: 8px;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#FFFFFF" />
+                        <path d="M16.5 9L10.5 15L7.5 12" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #FFFFFF; margin: 0; white-space: nowrap;">
+                        Biotech companies</p>
+                </div>
+                <!-- Item 5 -->
+                <div
+                    style="display: flex; align-items: center; gap: 8px; padding: 8px 20px 8px 8px; border-radius: 8px;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#FFFFFF" />
+                        <path d="M16.5 9L10.5 15L7.5 12" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #FFFFFF; margin: 0; white-space: nowrap;">
+                        Chemistry & biology departments</p>
+                </div>
+                <!-- Item 6 -->
+                <div
+                    style="display: flex; align-items: center; gap: 8px; padding: 8px 20px 8px 8px; border-radius: 8px;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#FFFFFF" />
+                        <path d="M16.5 9L10.5 15L7.5 12" stroke="#010028" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p
+                        style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #FFFFFF; margin: 0; white-space: nowrap;">
+                        Private laboratory groups</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TEAM ORDERING SUPPLIES SECTION
+         ======================================== -->
+    <section style="background-color: var(--color-secondary-dark); color: var(--color-white);">
+        <div class="text-center">
+            <h2 class="section-heading" style="color: var(--color-white);">Team ordering supplies you need.</h2>
+            <div class="row mt-5 g-4">
+                <div class="col-md-4">
+                    <i class="bi bi-box-seam"
+                        style="font-size: 60px; color: var(--color-green); margin-bottom: 20px;"></i>
+                    <h4>Bulk discounts</h4>
+                    <p>Special pricing for orders of 10+ lab coats</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-patch-check"
+                        style="font-size: 60px; color: var(--color-green); margin-bottom: 20px;"></i>
+                    <h4>Custom embroidery</h4>
+                    <p>Add lab names, logos, or individual names</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-truck" style="font-size: 60px; color: var(--color-green); margin-bottom: 20px;"></i>
+                    <h4>Fast delivery</h4>
+                    <p>Ships within 5-7 business days for bulk orders</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PRODUCT DETAILS SECTION
+         ======================================== -->
+    <section class="product-details-section">
+        <div class="product-details-grid">
+            <div>
+                <!-- PLACEHOLDER: Replace with product detail image -->
+                <img src="images/fullGuardLabCoat.png" alt="FullGuard Lab Coat Details"
+                    style="border-radius: var(--border-radius-lg); max-width: 100%;">
+            </div>
+            <div>
+                <h2
+                    style="font-size: 52px; font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-20); background: linear-gradient(134.571deg, rgb(2, 149, 255) 4.08%, rgb(173, 133, 255) 49.729%, rgb(8, 255, 225) 97.72%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    Every detail serves a purpose.</h2>
+
+                <ul class="product-detail-list"
+                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #1b1a3e; margin-bottom: var(--spacing-28);">
+                    <li>Modern mandarin collar</li>
+                    <li>Six durable snap buttons</li>
+                    <li>Ribbed knit cuffs</li>
+                    <li>Chest pocket with pen slots + ruler pocket</li>
+                    <li>Optional logo & name embroidery</li>
+                    <li>Lightweight, breathable material</li>
+                    <li>Machine washable</li>
+                    <li>XS–4XL fit range</li>
+                    <li>Tailored silhouette</li>
+                </ul>
+
+                <p
+                    style="font-family: 'Inter', sans-serif; font-size: 28px; font-weight: var(--font-weight-semibold); line-height: normal; color: #1b1a3e; margin-bottom: var(--spacing-28);">
+                    Designed with input from real lab workers - because no coat should get in the way of good science.
+                </p>
+
+                <a href="#shop" class="btn-primary-custom">Get Your FullGuard Coat</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ORDERING PROCESS SECTION - EXACT Figma Specs
+         ======================================== -->
+    <section style="background-color: #FFFFFF; padding: 80px 120px;">
+        <!-- Container with border radius and padding -->
+        <div style="display: flex; flex-direction: column; gap: 20px; align-items: center; padding: 60px 100px; border-radius: 40px; background-color: rgba(230, 230, 234, 0.3);">
+            <!-- Heading and Subheading -->
+            <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;">
+                <h2 style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 52px; line-height: normal; color: #010028; margin: 0; max-width: 744px;">Ordering for a team shouldn't be complicated.</h2>
+                <p style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 28px; line-height: normal; color: #1b1a3e; margin: 0;">Your lab gets outfitted with high-quality coats, without the logistical headaches.</p>
+            </div>
+
+            <!-- Step Numbers Row -->
+            <div style="display: flex; align-items: center; padding: 0 80px; width: 100%; max-width: 1240px; height: 74px;">
+                <!-- Step 1 -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border: 1px solid #008aed; border-radius: 37px; flex-shrink: 0;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 42px; line-height: normal; color: #1b1a3e; margin: 0; text-align: center;">1</p>
+                </div>
+                <!-- Connector Line 1 -->
+                <div style="flex-grow: 1; height: 1px; background-color: #008aed; margin: 0 10px;"></div>
+                <!-- Step 2 -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border: 1px solid #008aed; border-radius: 37px; flex-shrink: 0;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 42px; line-height: normal; color: #1b1a3e; margin: 0; text-align: center;">2</p>
+                </div>
+                <!-- Connector Line 2 -->
+                <div style="flex-grow: 1; height: 1px; background-color: #008aed; margin: 0 10px;"></div>
+                <!-- Step 3 -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border: 1px solid #008aed; border-radius: 37px; flex-shrink: 0;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 42px; line-height: normal; color: #1b1a3e; margin: 0; text-align: center;">3</p>
+                </div>
+                <!-- Connector Line 3 -->
+                <div style="flex-grow: 1; height: 1px; background-color: #008aed; margin: 0 10px;"></div>
+                <!-- Step 4 -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border: 1px solid #008aed; border-radius: 37px; flex-shrink: 0;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 42px; line-height: normal; color: #1b1a3e; margin: 0; text-align: center;">4</p>
+                </div>
+                <!-- Connector Line 4 -->
+                <div style="flex-grow: 1; height: 1px; background-color: #008aed; margin: 0 10px;"></div>
+                <!-- Step 5 -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border: 1px solid #008aed; border-radius: 37px; flex-shrink: 0;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 42px; line-height: normal; color: #1b1a3e; margin: 0; text-align: center;">5</p>
+                </div>
+            </div>
+
+            <!-- Step Cards Row -->
+            <div style="display: flex; gap: 20px; width: 100%;">
+                <!-- Card 1 -->
+                <div style="flex: 1; background-color: #e6e6ea; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 12px; height: 144px; text-align: center;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0;">Submit a quote request</p>
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #010028; margin: 0;">with your team size.</p>
+                </div>
+                <!-- Card 2 -->
+                <div style="flex: 1; background-color: #e6e6ea; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 12px; height: 144px; text-align: center;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0;">Receive volume pricing</p>
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #010028; margin: 0;">within 24 hours.</p>
+                </div>
+                <!-- Card 3 -->
+                <div style="flex: 1; background-color: #e6e6ea; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 12px; height: 144px; text-align: center;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0;">Choose embroidery options</p>
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #010028; margin: 0;">(optional)</p>
+                </div>
+                <!-- Card 4 -->
+                <div style="flex: 1; background-color: #e6e6ea; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 12px; height: 144px; text-align: center;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0;">Confirm sizes</p>
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #010028; margin: 0;">using our simple size chart.</p>
+                </div>
+                <!-- Card 5 -->
+                <div style="flex: 1; background-color: #e6e6ea; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 12px; height: 144px; text-align: center;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0;">Your coats ship quickly</p>
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #010028; margin: 0;">- most orders ship within days.</p>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div style="display: flex; align-items: flex-start;">
+                <a href="#quote" style="background-color: #008aed; display: flex; gap: 4px; align-items: center; justify-content: center; padding: 16px 20px; border-radius: 40px; text-decoration: none;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 20px; color: #FFFFFF; margin: 0; white-space: nowrap;">Find My Size & Order</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         OUTFIT YOUR TEAM SECTION - EXACT Figma Specs
+         ======================================== -->
+    <section style="background-color: #FFFFFF; padding: 0 100px;">
+        <div style="display: flex; align-items: center; justify-content: center; padding: 80px; border-radius: 20px; background: linear-gradient(125.455deg, rgba(2, 149, 255, 0.2) 4.08%, rgba(173, 133, 255, 0.2) 49.729%, rgba(8, 255, 225, 0.2) 97.72%), rgb(27, 26, 62);">
+            <div style="display: flex; flex: 1; gap: 20px; align-items: flex-end;">
+                <div style="display: flex; flex-direction: column; gap: 20px; flex: 1;">
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 42px; line-height: normal; color: #e6e6ea; margin: 0;">Outfit your entire team with lab coats that inspire confidence.</p>
+                    <p style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 28px; line-height: normal; color: #f2f2f4; margin: 0;">Bulk pricing and embroidery available.</p>
+                </div>
+                <div style="display: flex; align-items: flex-start;">
+                    <a href="#quote" style="background-color: #008aed; display: flex; gap: 4px; align-items: center; justify-content: center; padding: 16px 20px; border-radius: 40px; text-decoration: none;">
+                        <p style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 20px; color: #FFFFFF; margin: 0; white-space: nowrap;">Request a Quote</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FAQ SECTION - EXACT Figma Specs (Same as index.html)
+         ======================================== -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <div class="faq-intro">
+                <h2>Frequently asked questions</h2>
+                <p>Here are some frequently asked questions about SicenceAide AI tutoring</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-items">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                What is the minimum order for bulk pricing?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Pricing starts at 10 coats and scales up.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                Do you offer embroidery?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes — name, department, and logo embroidery is available.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                How long does production take?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Most team orders ship in 3–7 business days.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                Do you offer samples for evaluation?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, request a single sample before placing a full team order.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                What if our team has a wide range of sizes?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We carry XS–4XL and guarantee a consistent fit across all builds.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FINAL CTA SECTION
+         ======================================== -->
+    <section class="cta-team-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="cta-images-grid">
+                        <div class="cta-image-item">
+                            <img src="images/labCoat1.png" alt="Lab coat detail 1">
+                        </div>
+                        <div class="cta-image-item">
+                            <img src="images/labCoat2.png" alt="Lab coat detail 2">
+                        </div>
+                        <div class="cta-image-item">
+                            <img src="images/labCoat3.png" alt="Lab coat detail 3">
+                        </div>
+                        <div class="cta-image-item">
+                            <img src="images/labCoat4.png" alt="Lab coat detail 4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <span class="cta-badge">Special bulk pricing available</span>
+                    <h2 style="font-size: var(--font-size-h2); margin-bottom: var(--spacing-20);">Ready to outfit your
+                        entire lab team?</h2>
+                    <p style="font-size: var(--font-size-main-text); margin-bottom: var(--spacing-28);">Get your team
+                        lab coats they'll actually want to wear. Professional, functional, and built to last.</p>
+                    <a href="#quote" class="btn-gradient" style="margin-bottom: 16px;">Request a Team Quote</a>
+                    <br>
+                    <a href="index.html"
+                        style="color: var(--color-white); text-decoration: underline; font-size: var(--font-size-paragraph);">Shop
+                        Individual Lab Coats</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER SECTION
+         ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5>ScienceAide</h5>
+                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 14px;">
+                        Modern lab coats designed by scientists, for scientists. Elevating how you show up in the lab.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5>Shop</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Individual Lab Coats</a></li>
+                        <li><a href="lab-team.html">Team Orders</a></li>
+                        <li><a href="#size">Size Guide</a></li>
+                        <li><a href="#bulk">Bulk Orders</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#shipping">Shipping & Returns</a></li>
+                        <li><a href="#faqs">FAQ</a></li>
+                        <li><a href="#care">Care Instructions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ScienceAide. All rights reserved. | <a href="#" style="color: inherit;">Privacy
+                        Policy</a> | <a href="#" style="color: inherit;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
