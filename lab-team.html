@@ -63,7 +63,7 @@
             /* Font Weights */
             --font-weight-extralight: 200;
             --font-weight-regular: 400;
-            --font-weight-medium: 500;
+            --font-weight-medium: 400;
             --font-weight-semibold: 600;
             --font-weight-bold: 700;
 
@@ -112,7 +112,14 @@
             font-size: var(--font-size-paragraph);
             line-height: var(--line-height-paragraph);
             color: var(--color-dark-text);
-            background-color: #FFFFFF;
+            /* Radial gradient background */
+            background: radial-gradient(
+                103.41% 125.63% at -13.85% -46.08%,
+                rgba(2, 149, 255, 0.25) 0%,
+                rgba(173, 133, 255, 0.22) 40%,
+                rgba(255, 255, 255, 0) 70%
+            );
+            background-color: #FAFBFF;
             overflow-x: hidden;
             position: relative;
         }
@@ -282,7 +289,7 @@
         }
 
         .navbar-custom .navbar-brand img {
-            height: 51px;
+            height: 40px;
             width: auto;
             display: block;
         }
@@ -334,8 +341,8 @@
 
         .navbar-custom .nav-action-link {
             color: var(--color-white);
-            font-size: var(--font-size-main-text);
-            font-weight: var(--font-weight-medium);
+            font-size: 16px;
+            font-weight: 500;
             margin-right: var(--spacing-20);
             text-decoration: none;
             transition: var(--transition-base);
@@ -347,11 +354,11 @@
 
         .navbar-custom .btn-login {
             color: var(--color-white);
-            border: 1px solid #0295ff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: var(--border-radius-pill);
-            padding: var(--spacing-16) var(--spacing-32);
-            font-size: var(--font-size-main-text);
-            font-weight: var(--font-weight-medium);
+            padding: 8px 24px;
+            font-size: 16px;
+            font-weight: 500;
             background: transparent;
             text-decoration: none;
             transition: var(--transition-base);
@@ -560,7 +567,7 @@
            ======================================== */
 
         section {
-            padding: var(--spacing-80) var(--spacing-120);
+            padding: var(--spacing-40) var(--spacing-120);
         }
 
         .section-heading {
@@ -574,7 +581,7 @@
 
         .section-subheading {
             font-size: var(--font-size-main-text);
-            font-weight: var(--font-weight-medium);
+            font-weight: 500;
             line-height: var(--line-height-main);
             text-align: center;
             color: var(--color-dark-text);
@@ -642,7 +649,7 @@
         .credibility-gradient-text {
             font-size: var(--font-size-h2);
             font-weight: var(--font-weight-bold);
-            line-height: var(--line-height-heading);
+            line-height: '20px';
             background: linear-gradient(162.18deg, #0295FF 4.08%, #AD85FF 49.729%, #08FFE1 97.72%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -773,40 +780,108 @@
 
         /* CTA Section */
         .cta-team-section {
-            background-color: var(--color-navy-medium);
-            padding: var(--spacing-80) var(--spacing-120);
-            text-align: center;
-            color: var(--color-white);
-        }
-
-        .cta-badge {
-            background-color: var(--color-green);
-            color: var(--color-primary-navy);
-            padding: var(--spacing-8) var(--spacing-20);
-            border-radius: var(--border-radius-pill);
-            font-size: var(--font-size-paragraph);
-            font-weight: var(--font-weight-semibold);
-            display: inline-block;
-            margin-bottom: var(--spacing-20);
+            background-color: var(--color-white);
+            /* White background */
+            color: var(--color-dark-text);
+            /* Dark text */
+            padding: var(--spacing-100) 0;
+            /* Increased padding */
+            position: relative;
         }
 
         .cta-images-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--spacing-16);
-            margin-bottom: var(--spacing-40);
+            gap: var(--spacing-12);
+            /* 12px gap */
+            margin-bottom: var(--spacing-20);
+            /* 20px gap to badge */
+            position: relative;
+            /* For badge positioning */
+            padding: var(--spacing-12);
+            border: 1px solid #E6E6EA;
+            border-radius: var(--spacing-20);
         }
 
         .cta-image-item {
-            border-radius: var(--border-radius-xl);
+            border-radius: var(--spacing-20);
+            /* 20px - Exact Figma */
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(249, 249, 249, 0.15);
+            position: relative;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+            /* Shadow effect from Figma */
         }
 
         .cta-image-item img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: fill;
+        }
+
+        .cta-badge {
+            display: inline-block;
+            background-color: #08FFE1;
+            /* Cyan */
+            color: var(--color-primary-navy);
+            /* Dark text */
+            padding: var(--spacing-12) var(--spacing-20);
+            /* 12px 20px */
+            border-radius: var(--spacing-40);
+            /* Pill */
+            font-size: var(--font-size-paragraph);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-20);
+        }
+
+        .cta-content h2 {
+            color: var(--color-primary-navy);
+            /* Dark text */
+            font-size: var(--font-size-h2);
+            /* 52px - Exact Figma */
+            font-weight: var(--font-weight-bold);
+            /* 700 */
+            line-height: normal;
+            /* Exact Figma */
+            margin-bottom: var(--spacing-20);
+            /* 20px */
+        }
+
+        .cta-content p {
+            color: var(--color-primary-navy);
+            /* Dark text */
+            font-size: var(--font-size-main-text);
+            /* 20px - Exact Figma */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-main);
+            /* 28px */
+            margin-bottom: var(--spacing-32);
+            /* 32px */
+        }
+
+        .cta-secondary-link {
+            color: var(--color-primary-navy);
+            /* Dark text */
+            text-decoration: underline;
+            margin-top: var(--spacing-20);
+            /* 20px */
+            display: inline-block;
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-medium);
+            /* 500 */
+            line-height: var(--line-height-main);
+            /* 28px */
+        }
+
+        .cta-secondary-link:hover {
+            color: var(--color-primary-blue);
+        }
+
+        @media (max-width: 991px) {
+            .cta-images-grid {
+                margin-bottom: var(--spacing-lg);
+            }
         }
 
         /* FAQ Section - EXACT Figma Specs (Same as index.html) */
@@ -916,59 +991,88 @@
 
         /* Footer */
         .footer {
-            background-color: var(--color-primary-navy);
+            background-color: #173264;
+            /* Dark Navy from reference */
             color: var(--color-white);
-            padding: var(--spacing-60) 0 var(--spacing-32);
+            padding: var(--spacing-100) 0 var(--spacing-40);
+            /* 100px top, 40px bottom */
+            position: relative;
+            clip-path: ellipse(150% 100% at 50% 100%);
+            /* Create subtle curve */
+            border-top-left-radius: 50% 40px;
+            border-top-right-radius: 50% 40px;
+            margin-top: -40px;
+            /* Pull up to overlap slightly if needed */
         }
 
         .footer h5 {
-            font-size: 18px;
-            font-weight: var(--font-weight-semibold);
+            color: var(--color-white);
             margin-bottom: var(--spacing-20);
+            /* 20px */
+            font-size: var(--font-size-main-text);
+            /* 20px */
+            font-weight: var(--font-weight-semibold);
+            /* 600 */
+            line-height: normal;
         }
 
         .footer-links {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .footer-links li {
             margin-bottom: var(--spacing-12);
+            /* 12px */
         }
 
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-            transition: var(--transition-base);
+            font-size: var(--font-size-paragraph);
+            /* 16px */
+            font-weight: var(--font-weight-regular);
+            /* 400 */
+            line-height: var(--line-height-paragraph);
+            /* 24px */
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--color-white);
+            color: var(--color-primary-blue);
         }
 
         .footer-social {
             display: flex;
             gap: var(--spacing-16);
+            /* 16px */
             margin-top: var(--spacing-20);
+            /* 20px */
         }
 
         .footer-social a {
-            color: var(--color-white);
-            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: var(--transition-base);
         }
 
         .footer-social a:hover {
-            color: var(--color-primary-blue);
+            background-color: var(--color-primary-blue);
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: var(--spacing-40);
-            padding-top: var(--spacing-20);
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing-md);
             text-align: center;
-            font-size: 14px;
             color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
         }
 
         /* ========================================
@@ -1052,6 +1156,231 @@
             section div[style*="border-radius: 58px"] p {
                 font-size: 16px !important;
                 line-height: 24px !important;
+            }
+
+            /* Hero Section Mobile */
+            .hero-section {
+                padding: var(--spacing-20);
+            }
+
+            .hero-container {
+                padding: var(--spacing-40) var(--spacing-20);
+                border-radius: var(--border-radius-md);
+                min-height: auto;
+            }
+
+            .hero-eyebrow {
+                font-size: 18px;
+                margin-bottom: var(--spacing-20);
+            }
+
+            .hero-headline {
+                font-size: 32px;
+                margin-bottom: var(--spacing-20);
+            }
+
+            .hero-description {
+                font-size: 16px;
+                margin-bottom: var(--spacing-32);
+            }
+
+            .hero-image-container {
+                margin-top: var(--spacing-32);
+                text-align: center;
+            }
+
+            /* Credibility Section Mobile */
+            .credibility-section {
+                padding: var(--spacing-40) var(--spacing-20);
+            }
+
+            .credibility-image-container {
+                position: relative;
+                right: auto;
+                top: auto;
+                width: 100%;
+                height: 300px;
+                margin-top: var(--spacing-20);
+            }
+
+            .credibility-text {
+                font-size: 14px;
+            }
+
+            .credibility-outcome-label {
+                font-size: 18px;
+            }
+
+            .credibility-main-text {
+                font-size: 20px;
+            }
+
+            .credibility-gradient-text {
+                font-size: 32px;
+            }
+
+            /* Comparison Section Mobile */
+            section[style*="background-color: #010028"] {
+                padding: 40px 20px !important;
+            }
+
+            section[style*="background-color: #010028"] h2 {
+                font-size: 28px !important;
+                line-height: 1.2 !important;
+            }
+
+            section[style*="background-color: #010028"] > p {
+                font-size: 18px !important;
+                line-height: 1.4 !important;
+            }
+
+            /* Comparison container - stack columns vertically */
+            section[style*="background-color: #010028"] div[style*="background-color: #1B1A3E"] {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            /* Comparison column headings */
+            section[style*="background-color: #010028"] div[style*="background-color: #1B1A3E"] h3 {
+                font-size: 28px !important;
+            }
+
+            /* Comparison column padding */
+            section[style*="background-color: #010028"] div[style*="flex: 1; padding: 40px"] {
+                padding: 20px !important;
+            }
+
+            /* Comparison list items */
+            section[style*="background-color: #010028"] div[style*="background-color: #1B1A3E"] p {
+                font-size: 16px !important;
+                line-height: 1.4 !important;
+            }
+
+            /* Product Details Mobile */
+            .product-details-section {
+                padding: var(--spacing-40) var(--spacing-20);
+            }
+
+            .product-details-grid {
+                gap: var(--spacing-40);
+            }
+
+            /* Ordering Process Mobile */
+            section[style*="padding: 80px 120px"] {
+                padding: 40px 20px !important;
+            }
+
+            section[style*="padding: 60px 100px"] {
+                padding: 40px 20px !important;
+            }
+
+            section div[style*="padding: 0 80px"] {
+                padding: 0 20px !important;
+            }
+
+            section div[style*="display: flex; gap: 20px"] {
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+
+            /* Supplies Section Mobile */
+            .supplies-grid {
+                padding: 0 20px !important;
+            }
+
+            /* CTA Section Mobile */
+            .cta-team-section {
+                padding: var(--spacing-60) 0;
+            }
+
+            .cta-badge-floating {
+                top: -15px;
+                right: -5px;
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            /* Footer Mobile */
+            .footer {
+                padding: var(--spacing-60) 0 var(--spacing-32);
+            }
+
+            .footer h5 {
+                font-size: 18px;
+            }
+        }
+
+        /* Additional Tablet Responsive Styles */
+        @media (max-width: 1024px) {
+            /* Hero Section Tablet */
+            .hero-section {
+                padding: var(--spacing-32);
+            }
+
+            .hero-container {
+                padding: var(--spacing-60) var(--spacing-40);
+            }
+
+            .hero-headline {
+                font-size: 42px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            /* Credibility Section Tablet */
+            .credibility-section {
+                padding: var(--spacing-40) var(--spacing-60);
+            }
+
+            .credibility-image-container {
+                width: 280px;
+                height: 420px;
+            }
+
+            /* Comparison Section Tablet */
+            section[style*="padding: 80px 120px"] {
+                padding: 60px 60px !important;
+            }
+
+            section[style*="background-color: #010028"] h2 {
+                font-size: 38px !important;
+            }
+
+            section[style*="background-color: #010028"] > p {
+                font-size: 24px !important;
+            }
+
+            section[style*="background-color: #010028"] div[style*="background-color: #1B1A3E"] h3 {
+                font-size: 36px !important;
+            }
+
+            section[style*="background-color: #010028"] div[style*="flex: 1; padding: 40px"] {
+                padding: 30px !important;
+            }
+
+            section[style*="background-color: #010028"] div[style*="background-color: #1B1A3E"] p {
+                font-size: 18px !important;
+            }
+
+            /* Product Details Tablet */
+            .product-details-section {
+                padding: var(--spacing-60) var(--spacing-60);
+            }
+
+            /* Ordering Process Tablet */
+            section[style*="padding: 60px 100px"] {
+                padding: 40px 60px !important;
+            }
+
+            section div[style*="padding: 0 80px"] {
+                padding: 0 40px !important;
+            }
+
+            /* Supplies Section Tablet */
+            .supplies-grid {
+                padding: 0 40px !important;
             }
         }
     </style>
@@ -1210,10 +1539,6 @@
                     <div
                         style="position: absolute; right: 120px; bottom: 80px; font-size: 40px; color: var(--color-purple);">
                         ★</div>
-                    <div
-                        style="position: absolute; left: 43px; bottom: 120px; font-size: 34px; color: var(--color-purple);">
-                        ★</div>
-
                     <!-- Image placeholder -->
                     <div class="credibility-image-container">
                         <!-- PLACEHOLDER: Replace with lady and man image -->
@@ -1964,18 +2289,13 @@
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <span class="cta-badge">Special bulk pricing available</span>
-                    <h2 style="font-size: var(--font-size-h2); margin-bottom: var(--spacing-20);">Ready to outfit
-                        your
-                        entire lab team?</h2>
-                    <p style="font-size: var(--font-size-main-text); margin-bottom: var(--spacing-28);">Get your
-                        team
-                        lab coats they'll actually want to wear. Professional, functional, and built to last.</p>
-                    <a href="#quote" class="btn-gradient" style="margin-bottom: 16px;">Request a Team Quote</a>
-                    <br>
-                    <a href="index.html"
-                        style="color: var(--color-white); text-decoration: underline; font-size: var(--font-size-paragraph);">Shop
-                        Individual Lab Coats</a>
+                    <div class="cta-content">
+                        <h2>Ready to outfit your entire lab team?</h2>
+                        <p>Let us prepare a custom quote tailored to your group size and needs.</p>
+                        <a href="#quote" class="btn-primary-custom">Request a Quote</a>
+                        <br>
+                        <a href="#features" class="cta-secondary-link">View FullGuard Features & Fit Guide</a>
+                    </div>
                 </div>
             </div>
         </div>
