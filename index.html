@@ -1774,13 +1774,13 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 991px) {
             .process-section {
                 padding: var(--spacing-40) var(--spacing-20);
             }
 
             .process-section h2 {
-                font-size: 28px;
+                font-size: 32px;
             }
 
             .process-steps-numbers {
@@ -1821,8 +1821,8 @@
             }
         }
 
-        /* Comparison Mobile */
-        @media (max-width: 768px) {
+        /* Comparison Mobile/Tablet - Stack earlier */
+        @media (max-width: 991px) {
             .comparison-section {
                 padding: var(--spacing-40) var(--spacing-20);
             }
@@ -2883,6 +2883,65 @@
         .mt-4 {
             margin-top: var(--spacing-md);
         }
+
+        /* Small Mobile Optimization */
+        @media (max-width: 576px) {
+            :root {
+                --container-padding: 16px;
+                --spacing-40: 24px;
+                --spacing-60: 32px;
+                --spacing-80: 40px;
+                --spacing-100: 40px;
+            }
+
+            h1 {
+                font-size: 28px !important;
+            }
+
+            h2 {
+                font-size: 24px !important;
+            }
+
+            .hero-container {
+                padding: 30px 16px;
+            }
+
+            .hero-image {
+                height: auto !important;
+            }
+
+            .benefit-card {
+                position: static !important;
+                width: 100% !important;
+                margin-bottom: 16px;
+            }
+
+            .benefits-center-image {
+                display: none;
+                /* Hide complex center image on very small screens to save space */
+            }
+
+            .cta-images-grid {
+                grid-template-columns: 1fr;
+                /* 1 column for small mobile */
+            }
+
+            .footer {
+                padding-top: 60px;
+            }
+
+            .testimonial-section {
+                max-width: 100% !important;
+                padding: var(--spacing-20) 16px !important;
+                border-radius: 16px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .testimonial-heading {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 
@@ -2951,8 +3010,8 @@
                     <div class="col-lg-6 hero-image-container">
                         <!-- REPLACE: Hero image - Scientists in lab coats (approx 600x800px) -->
                         <!-- Suggested filename: hero-scientists.jpg -->
-                        <img src="images/scientists.png" alt="Scientists wearing FullGuard lab coats"
-                            class="hero-image">
+                        <img src="images/ladyAdnMan.png" alt="Scientists wearing FullGuard lab coats" class="hero-image"
+                            style="width: 100%; height: 551px; object-fit: contain;">
                     </div>
                 </div>
             </div>

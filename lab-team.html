@@ -379,7 +379,7 @@
         }
 
         /* Navbar Mobile Responsive */
-        @media (max-width: 991px) {
+        @media (max-width: 1024px) {
             .navbar-custom {
                 padding: var(--spacing-12) var(--spacing-20);
             }
@@ -659,7 +659,7 @@
 
         .credibility-image-container {
             position: absolute;
-            right: 100px;
+            right: 10px;
             top: -37px;
             width: 313px;
             height: 469px;
@@ -710,7 +710,7 @@
         /* Product Details Section */
         .product-details-section {
             background-color: var(--color-white);
-            padding: var(--spacing-80) var(--spacing-120);
+            /* padding: var(--spacing-80) var(--spacing-120); */
         }
 
         .product-details-grid {
@@ -780,13 +780,21 @@
 
         /* CTA Section */
         .cta-team-section {
-            background-color: var(--color-white);
-            /* White background */
-            color: var(--color-dark-text);
-            /* Dark text */
-            padding: var(--spacing-100) 0;
-            /* Increased padding */
-            position: relative;
+            /* background-color: var(--color-navy-medium); */
+            /* padding: var(--spacing-80) var(--spacing-120); */
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .cta-badge {
+            background-color: var(--color-green);
+            color: var(--color-primary-navy);
+            padding: var(--spacing-8) var(--spacing-20);
+            border-radius: var(--border-radius-pill);
+            font-size: var(--font-size-paragraph);
+            font-weight: var(--font-weight-semibold);
+            display: inline-block;
+            margin-bottom: var(--spacing-20);
         }
 
         .cta-images-grid {
@@ -887,7 +895,7 @@
         /* FAQ Section - EXACT Figma Specs (Same as index.html) */
         .faq-section {
             background-color: var(--color-white);
-            padding: var(--spacing-60) var(--spacing-100);
+            /* padding: var(--spacing-60) var(--spacing-100); */
         }
 
         .faq-container {
@@ -1136,251 +1144,414 @@
                 width: 100%;
                 font-size: 18px;
             }
+        }
 
-            /* Responsive styles for Lab Environments section pills */
-            section[style*="padding: 40px 120px"] {
-                padding: 40px 20px !important;
+        /* Global Overflow Fix */
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* ========================================
+           RESPONSIVE REFACTOR CLASSES
+           ======================================== */
+
+        /* Lab Environments Section */
+        .lab-environments-section {
+            padding: 40px 120px;
+            background-color: #FFFFFF;
+        }
+
+        .environment-pills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: flex-start;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .environment-pill {
+            background-color: rgba(173, 133, 255, 0.15);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px 12px 12px;
+            border-radius: 58px;
+        }
+
+        .environment-pill svg {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+        }
+
+        .environment-pill-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 28px;
+            color: #010028;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        /* Ordering Process Section */
+        .ordering-process-section-custom {
+            background-color: #FFFFFF;
+            padding: 80px 120px;
+        }
+
+        .process-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            padding: 60px 100px;
+            border-radius: 40px;
+            background-color: rgba(230, 230, 234, 0.3);
+        }
+
+        .process-steps-row {
+            display: flex;
+            align-items: center;
+            padding: 0 80px;
+            width: 100%;
+            max-width: 1240px;
+            height: 74px;
+        }
+
+        .process-step-circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 74px;
+            height: 74px;
+            border: 1px solid #008aed;
+            border-radius: 37px;
+            flex-shrink: 0;
+        }
+
+        .process-connector-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #008aed;
+            margin: 0 10px;
+        }
+
+        .process-cards-row {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .process-card {
+            flex: 1;
+            background-color: #e6e6ea;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            height: 144px;
+            text-align: center;
+        }
+
+        /* Outfit Team Section */
+        .outfit-team-section {
+            background-color: #FFFFFF;
+            padding: 0 100px;
+        }
+
+        .outfit-team-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px;
+            border-radius: 20px;
+            background: linear-gradient(125.455deg, rgba(2, 149, 255, 0.2) 4.08%, rgba(173, 133, 255, 0.2) 49.729%, rgba(8, 255, 225, 0.2) 97.72%), rgb(27, 26, 62);
+        }
+
+        .outfit-team-inner {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .outfit-team-text-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+        }
+
+        /* FAQ Clean Up */
+        .faq-intro {
+            flex: 0 0 501px;
+            width: auto;
+            margin-right: 48px;
+        }
+
+        /* ========================================
+           RESPONSIVE QUERIES
+           ======================================== */
+        @media (max-width: 1200px) {
+            .ordering-process-section-custom {
+                padding: 60px 40px;
             }
 
-            section[style*="padding: 40px 120px"] h2 {
-                font-size: 32px !important;
+            .process-container {
+                padding: 40px;
             }
 
-            section[style*="padding: 40px 120px"] p {
-                font-size: 16px !important;
-                line-height: 24px !important;
-                max-width: 100% !important;
+            .process-steps-row {
+                padding: 0;
             }
 
-            /* Make pills stack on mobile and adjust text size */
-            section div[style*="border-radius: 58px"] p {
-                font-size: 16px !important;
-                line-height: 24px !important;
+            .outfit-team-section {
+                padding: 0 40px;
             }
 
-            /* Hero Section Mobile */
-            .hero-section {
-                padding: var(--spacing-20);
+            .lab-environments-section {
+                padding: 40px 40px;
             }
 
-            .hero-container {
-                padding: var(--spacing-40) var(--spacing-20);
-                border-radius: var(--border-radius-md);
-                min-height: auto;
+            .faq-container {
+                flex-direction: column;
             }
 
-            .hero-eyebrow {
-                font-size: 18px;
-                margin-bottom: var(--spacing-20);
-            }
-
-            .hero-headline {
-                font-size: 32px;
-                margin-bottom: var(--spacing-20);
-            }
-
-            .hero-description {
-                font-size: 16px;
-                margin-bottom: var(--spacing-32);
-            }
-
-            .hero-image-container {
-                margin-top: var(--spacing-32);
+            .faq-intro {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 100%;
+                margin-right: 0;
+                margin-bottom: 40px;
                 text-align: center;
             }
 
-            /* Credibility Section Mobile */
-            .credibility-section {
-                padding: var(--spacing-40) var(--spacing-20);
+            .faq-intro h2,
+            .faq-intro p {
+                max-width: 100%;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
             }
 
+            .faq-list .accordion-item {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .environment-pill-text {
+                font-size: 16px;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .environment-pill {
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Lab Environments */
+            .lab-environments-section {
+                padding: 40px 20px;
+            }
+
+            /* Ordering Process */
+            .ordering-process-section-custom {
+                padding: 40px 20px;
+            }
+
+            .process-container {
+                padding: 30px 20px;
+            }
+
+            /* Hide the horizontal steps visualizer on mobile as it breaks */
+            .process-steps-row {
+                display: none;
+            }
+
+            .process-cards-row {
+                flex-direction: column;
+            }
+
+            .process-card {
+                width: 100%;
+                height: auto;
+                padding: 24px 20px;
+            }
+
+            /* Outfit Team */
+            .outfit-team-section {
+                padding: 0 20px;
+            }
+
+            .outfit-team-container {
+                padding: 40px 20px;
+            }
+
+            .outfit-team-inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .outfit-team-text-col {
+                width: 100%;
+            }
+
+            /* Credibility Section - Stack Image Below Text */
             .credibility-image-container {
                 position: relative;
                 right: auto;
                 top: auto;
                 width: 100%;
-                height: 300px;
-                margin-top: var(--spacing-20);
+                height: auto;
+                margin-top: 40px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
             }
 
-            .credibility-text {
-                font-size: 14px;
-            }
-
-            .credibility-outcome-label {
-                font-size: 18px;
-            }
-
-            .credibility-main-text {
-                font-size: 20px;
-            }
-
-            .credibility-gradient-text {
-                font-size: 32px;
-            }
-
-            /* Comparison Section Mobile */
-            section[style*="background-color: #010028"] {
-                padding: 40px 20px !important;
-            }
-
-            section[style*="background-color: #010028"] h2 {
-                font-size: 28px !important;
-                line-height: 1.2 !important;
-            }
-
-            section[style*="background-color: #010028"] > p {
-                font-size: 18px !important;
-                line-height: 1.4 !important;
-            }
-
-            /* Comparison container - stack columns vertically */
-            section[style*="background-color: #010028"] div[style*="background-color: #1B1A3E"] {
-                flex-direction: column !important;
-                gap: 20px !important;
-            }
-
-            /* Comparison column headings */
-            section[style*="background-color: #010028"] div[style*="background-color: #1B1A3E"] h3 {
-                font-size: 28px !important;
-            }
-
-            /* Comparison column padding */
-            section[style*="background-color: #010028"] div[style*="flex: 1; padding: 40px"] {
-                padding: 20px !important;
-            }
-
-            /* Comparison list items */
-            section[style*="background-color: #010028"] div[style*="background-color: #1B1A3E"] p {
-                font-size: 16px !important;
-                line-height: 1.4 !important;
-            }
-
-            /* Product Details Mobile */
-            .product-details-section {
-                padding: var(--spacing-40) var(--spacing-20);
-            }
-
-            .product-details-grid {
-                gap: var(--spacing-40);
-            }
-
-            /* Ordering Process Mobile */
-            section[style*="padding: 80px 120px"] {
-                padding: 40px 20px !important;
-            }
-
-            section[style*="padding: 60px 100px"] {
-                padding: 40px 20px !important;
-            }
-
-            section div[style*="padding: 0 80px"] {
-                padding: 0 20px !important;
-            }
-
-            section div[style*="display: flex; gap: 20px"] {
-                flex-direction: column !important;
-                gap: 12px !important;
-            }
-
-            /* Supplies Section Mobile */
-            .supplies-grid {
-                padding: 0 20px !important;
-            }
-
-            /* CTA Section Mobile */
-            .cta-team-section {
-                padding: var(--spacing-60) 0;
-            }
-
-            .cta-badge-floating {
-                top: -15px;
-                right: -5px;
-                font-size: 14px;
-                padding: 8px 16px;
-            }
-
-            /* Footer Mobile */
-            .footer {
-                padding: var(--spacing-60) 0 var(--spacing-32);
-            }
-
-            .footer h5 {
-                font-size: 18px;
+            .credibility-image-container img {
+                position: relative;
+                max-width: 320px;
+                height: auto !important;
+                object-fit: contain;
             }
         }
 
-        /* Additional Tablet Responsive Styles */
-        @media (max-width: 1024px) {
-            /* Hero Section Tablet */
-            .hero-section {
-                padding: var(--spacing-32);
+        /* 320px Mobile Optimization - Extended to 425px */
+        @media (max-width: 425px) {
+            :root {
+                --font-size-h2: 24px;
+                --font-size-h3: 20px;
+                --font-size-main-text: 16px;
+                --container-padding: 15px;
             }
 
-            .hero-container {
-                padding: var(--spacing-60) var(--spacing-40);
+            /* Credibility Section */
+            .credibility-main-text,
+            .credibility-gradient-text {
+                font-size: 22px !important;
+                line-height: 1.3;
             }
 
-            .hero-headline {
-                font-size: 42px;
+            .credibility-text {
+                font-size: 14px !important;
             }
 
-            .hero-description {
-                font-size: 18px;
+            /* Product Details Section - Mobile Alignment */
+            .product-details-section h2[style] {
+                font-size: 32px !important;
+                text-align: center !important;
             }
 
-            /* Credibility Section Tablet */
-            .credibility-section {
-                padding: var(--spacing-40) var(--spacing-60);
-            }
-
-            .credibility-image-container {
-                width: 280px;
-                height: 420px;
-            }
-
-            /* Comparison Section Tablet */
-            section[style*="padding: 80px 120px"] {
-                padding: 60px 60px !important;
-            }
-
-            section[style*="background-color: #010028"] h2 {
-                font-size: 38px !important;
-            }
-
-            section[style*="background-color: #010028"] > p {
-                font-size: 24px !important;
-            }
-
-            section[style*="background-color: #010028"] div[style*="background-color: #1B1A3E"] h3 {
-                font-size: 36px !important;
-            }
-
-            section[style*="background-color: #010028"] div[style*="flex: 1; padding: 40px"] {
-                padding: 30px !important;
-            }
-
-            section[style*="background-color: #010028"] div[style*="background-color: #1B1A3E"] p {
+            .product-details-section p[style] {
                 font-size: 18px !important;
+                text-align: center !important;
             }
 
-            /* Product Details Tablet */
-            .product-details-section {
-                padding: var(--spacing-60) var(--spacing-60);
+            .product-details-section ul.product-detail-list {
+                padding-left: 0 !important;
+                text-align: left;
+                display: inline-block;
+                margin: 0 auto 28px auto;
             }
 
-            /* Ordering Process Tablet */
-            section[style*="padding: 60px 100px"] {
-                padding: 40px 60px !important;
+            .product-details-section .product-details-grid>div:last-child {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
-            section div[style*="padding: 0 80px"] {
-                padding: 0 40px !important;
+            .product-details-section .product-detail-list li {
+                font-size: 16px !important;
+                padding-left: 24px;
+                /* Ensure space for checkmark */
             }
 
-            /* Supplies Section Tablet */
-            .supplies-grid {
-                padding: 0 40px !important;
+            /* Hide decorative stars on very small screens to prevent overlap */
+            /* Using a more robust selector targeting absolute divs in that specific column structure */
+            .credibility-section .col-12>div[style*="position: absolute"] {
+                display: none !important;
+            }
+
+            /* Lab Environments */
+            .environment-pill-text {
+                font-size: 13px;
+            }
+
+            .environment-pill {
+                padding: 6px 10px;
+                width: 100%;
+                /* Full width pills on very small screens to avoid weird wrapping */
+            }
+
+            /* Comparison Section - Responsive Fixes (Tablets & Mobile) */
+            @media (max-width: 1024px) {
+
+                /* Comparison Section */
+                section[style*="padding: 80px 120px"] {
+                    padding: 40px 20px !important;
+                }
+
+                /* Stack the main comparison container */
+                div[style*="background-color: #1B1A3E; border-radius: 20px"] {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    padding: 10px !important;
+                    border-radius: 12px !important;
+                }
+
+                /* Comparison items padding & width */
+                div[style*="flex: 1; padding: 40px;"] {
+                    padding: 24px !important;
+                    width: 100% !important;
+                    flex: none !important;
+                }
+
+                /* Override large font sizes */
+                h2[style*="font-size: 52px"] {
+                    font-size: 32px !important;
+                }
+
+                h3[style*="font-size: 42px"] {
+                    font-size: 28px !important;
+                }
+            }
+
+            @media (max-width: 425px) {
+
+                /* Comparison Section */
+                section[style*="padding: 80px 120px"] {
+                    padding: 40px 20px !important;
+                }
+            }
+
+            /* FAQ */
+            .accordion-button {
+                font-size: 15px;
+                padding: 0.8rem 0.5rem;
+            }
+
+            .accordion-body {
+                padding: 0.8rem 0.5rem;
+                font-size: 14px;
             }
         }
     </style>
@@ -1391,7 +1562,7 @@
     <!-- ========================================
          NAVIGATION BAR
          ======================================== -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
+    <nav class="navbar navbar-expand-xl navbar-custom">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="scienceaide-logo.png" alt="ScienceAide Logo">
@@ -1439,7 +1610,7 @@
                 style="background: radial-gradient(ellipse at 30% 50%, rgba(0, 135, 180, 1) 0%, rgba(0, 127, 171, 1) 14.5%, rgba(1, 102, 144, 1) 52.6%, rgba(1, 76, 113, 1) 76.3%, rgba(0, 50, 82, 1) 100%)">
                 <div class="row align-items-center">
                     <div class="col-lg-6 hero-content">
-                        <p class="hero-eyebrow">For labs that take presentation seriously</p>
+                        <!-- <p class="hero-eyebrow">For labs that take presentation seriously</p> -->
                         <h1 class="hero-headline">Your Lab, Upgraded.</h1>
                         <p class="hero-description">
                             Equip your team with lab coats that fit, function, and impress. Bulk orders & custom
@@ -1469,8 +1640,7 @@
 
         <div class="features-grid">
             <div class="feature-card">
-                <i class="bi bi-check-circle feature-card-icon"
-                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <img class="feature-card-icon" src="svg/shield.svg" alt="Modern collar icon">
                 <div>
                     <h3 class="feature-card-title">Modern collar</h3>
                     <p class="feature-card-description">Keeps your neckline clean and professional – no floppy, dated
@@ -1478,8 +1648,7 @@
                 </div>
             </div>
             <div class="feature-card">
-                <i class="bi bi-check-circle feature-card-icon"
-                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <img class="feature-card-icon" src="svg/shield.svg" alt="Modern collar icon">
                 <div>
                     <h3 class="feature-card-title">Ribbed knit cuffs</h3>
                     <p class="feature-card-description">Snug, soft, and protective so sleeves stay where they're
@@ -1487,8 +1656,7 @@
                 </div>
             </div>
             <div class="feature-card">
-                <i class="bi bi-shield-check feature-card-icon"
-                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <img class="feature-card-icon" src="svg/deepHipPocket.svg" alt="Modern collar icon">
                 <div>
                     <h3 class="feature-card-title">Clean silhouette, better fit</h3>
                     <p class="feature-card-description">Designed to give structure without feeling stiff, so you look
@@ -1496,8 +1664,7 @@
                 </div>
             </div>
             <div class="feature-card">
-                <i class="bi bi-shield-check feature-card-icon"
-                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <img class="feature-card-icon" src="svg/deepHipPocket.svg" alt="Modern collar icon">
                 <div>
                     <h3 class="feature-card-title">Deep hip pockets</h3>
                     <p class="feature-card-description">Plenty of space for notes, gloves, markers, or your phone
@@ -1505,16 +1672,14 @@
                 </div>
             </div>
             <div class="feature-card">
-                <i class="bi bi-check-circle feature-card-icon"
-                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <img class="feature-card-icon" src="svg/shield.svg" alt="Modern collar icon">
                 <div>
                     <h3 class="feature-card-title">Six-snap front closure</h3>
                     <p class="feature-card-description">Quick to open and close, with a sleek, tailored front.</p>
                 </div>
             </div>
             <div class="feature-card">
-                <i class="bi bi-clipboard-check feature-card-icon"
-                    style="font-size: 49.48px; color: var(--color-primary-blue);"></i>
+                <img class="feature-card-icon" src="svg/chestPackot.svg" alt="Modern collar icon">
                 <div>
                     <h3 class="feature-card-title">Smart chest pockets</h3>
                     <p class="feature-card-description">Dual chest pockets with dedicated slots for pens and a ruler, so
@@ -1553,7 +1718,7 @@
     <!-- ========================================
          LAB ENVIRONMENTS SECTION - EXACT Figma Specs
          ======================================== -->
-    <section style="padding: 40px 120px; background-color: #FFFFFF;">
+    <section class="lab-environments-section">
         <h2
             style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 52px; line-height: normal; text-align: center; color: #010028; margin-bottom: 20px;">
             Built to handle real lab environments.</h2>
@@ -1563,66 +1728,55 @@
             shifts and frequent wash cycles.</p>
 
         <!-- Check pills container with exact Figma specs -->
-        <div
-            style="display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-start; justify-content: center; width: 100%;">
+        <div class="environment-pills-container">
             <!-- Pill 1 -->
-            <div
-                style="background-color: rgba(173, 133, 255, 0.15); display: flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px 12px 12px; border-radius: 58px;">
+            <div class="environment-pill">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="10" fill="#AD85FF" />
                     <path d="M16.5 9L10.5 15L7.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <p
-                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0; white-space: nowrap;">
+                <p class="environment-pill-text">
                     Consistent quality across all sizes (XS–4XL)</p>
             </div>
             <!-- Pill 2 -->
-            <div
-                style="background-color: rgba(173, 133, 255, 0.15); display: flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px 12px 12px; border-radius: 58px;">
+            <div class="environment-pill">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="10" fill="#AD85FF" />
                     <path d="M16.5 9L10.5 15L7.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <p
-                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0; white-space: nowrap;">
+                <p class="environment-pill-text">
                     Easy ordering for large teams</p>
             </div>
             <!-- Pill 3 -->
-            <div
-                style="background-color: rgba(173, 133, 255, 0.15); display: flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px 12px 12px; border-radius: 58px;">
+            <div class="environment-pill">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="10" fill="#AD85FF" />
                     <path d="M16.5 9L10.5 15L7.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <p
-                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0; white-space: nowrap;">
+                <p class="environment-pill-text">
                     In-stock and ready to ship</p>
             </div>
             <!-- Pill 4 -->
-            <div
-                style="background-color: rgba(173, 133, 255, 0.15); display: flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px 12px 12px; border-radius: 58px;">
+            <div class="environment-pill">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="10" fill="#AD85FF" />
                     <path d="M16.5 9L10.5 15L7.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <p
-                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0; white-space: nowrap;">
+                <p class="environment-pill-text">
                     Optional custom embroidery (names, departments, facility branding)</p>
             </div>
             <!-- Pill 5 -->
-            <div
-                style="background-color: rgba(173, 133, 255, 0.15); display: flex; gap: 8px; align-items: center; justify-content: center; padding: 12px 20px 12px 12px; border-radius: 58px;">
+            <div class="environment-pill">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="10" fill="#AD85FF" />
                     <path d="M16.5 9L10.5 15L7.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <p
-                    style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0; white-space: nowrap;">
+                <p class="environment-pill-text">
                     Volume pricing available for groups of 10–500+</p>
             </div>
         </div>
@@ -1658,9 +1812,10 @@
 
                 <!-- Issue items with separators -->
                 <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
-                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="8.5" stroke="#FF9B00" />
+                        <path d="M6.00024 6L12.0108 12.0105" stroke="#FF9B00" stroke-linecap="round" />
+                        <path d="M12.0105 6.00708L5.99999 12.0176" stroke="#FF9B00" stroke-linecap="round" />
                     </svg>
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
@@ -1669,9 +1824,10 @@
                 <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
 
                 <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
-                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="8.5" stroke="#FF9B00" />
+                        <path d="M6.00024 6L12.0108 12.0105" stroke="#FF9B00" stroke-linecap="round" />
+                        <path d="M12.0105 6.00708L5.99999 12.0176" stroke="#FF9B00" stroke-linecap="round" />
                     </svg>
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
@@ -1680,9 +1836,10 @@
                 <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
 
                 <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
-                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="8.5" stroke="#FF9B00" />
+                        <path d="M6.00024 6L12.0108 12.0105" stroke="#FF9B00" stroke-linecap="round" />
+                        <path d="M12.0105 6.00708L5.99999 12.0176" stroke="#FF9B00" stroke-linecap="round" />
                     </svg>
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
@@ -1691,9 +1848,10 @@
                 <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
 
                 <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
-                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="8.5" stroke="#FF9B00" />
+                        <path d="M6.00024 6L12.0108 12.0105" stroke="#FF9B00" stroke-linecap="round" />
+                        <path d="M12.0105 6.00708L5.99999 12.0176" stroke="#FF9B00" stroke-linecap="round" />
                     </svg>
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
@@ -1702,9 +1860,10 @@
                 <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
 
                 <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
-                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="8.5" stroke="#FF9B00" />
+                        <path d="M6.00024 6L12.0108 12.0105" stroke="#FF9B00" stroke-linecap="round" />
+                        <path d="M12.0105 6.00708L5.99999 12.0176" stroke="#FF9B00" stroke-linecap="round" />
                     </svg>
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
@@ -1713,9 +1872,10 @@
                 <div style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
 
                 <div style="display: flex; align-items: center; gap: 27px; padding: 10px 0;">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#E6E6EA" opacity="0.3" />
-                        <line x1="5" y1="9" x2="13" y2="9" stroke="#E6E6EA" stroke-width="2" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="8.5" stroke="#FF9B00" />
+                        <path d="M6.00024 6L12.0108 12.0105" stroke="#FF9B00" stroke-linecap="round" />
+                        <path d="M12.0105 6.00708L5.99999 12.0176" stroke="#FF9B00" stroke-linecap="round" />
                     </svg>
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 40px; color: #E6E6EA; margin: 0; flex: 1;">
@@ -2000,10 +2160,9 @@
     <!-- ========================================
          ORDERING PROCESS SECTION - EXACT Figma Specs
          ======================================== -->
-    <section style="background-color: #FFFFFF; padding: 80px 120px;">
+    <section class="ordering-process-section-custom">
         <!-- Container with border radius and padding -->
-        <div
-            style="display: flex; flex-direction: column; gap: 20px; align-items: center; padding: 60px 100px; border-radius: 40px; background-color: rgba(230, 230, 234, 0.3);">
+        <div class="process-container">
             <!-- Heading and Subheading -->
             <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;">
                 <h2
@@ -2015,47 +2174,41 @@
             </div>
 
             <!-- Step Numbers Row -->
-            <div
-                style="display: flex; align-items: center; padding: 0 80px; width: 100%; max-width: 1240px; height: 74px;">
+            <div class="process-steps-row">
                 <!-- Step 1 -->
-                <div
-                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border: 1px solid #008aed; border-radius: 37px; flex-shrink: 0;">
+                <div class="process-step-circle">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 42px; line-height: normal; color: #1b1a3e; margin: 0; text-align: center;">
                         1</p>
                 </div>
                 <!-- Connector Line 1 -->
-                <div style="flex-grow: 1; height: 1px; background-color: #008aed; margin: 0 10px;"></div>
+                <div class="process-connector-line"></div>
                 <!-- Step 2 -->
-                <div
-                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border: 1px solid #008aed; border-radius: 37px; flex-shrink: 0;">
+                <div class="process-step-circle">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 42px; line-height: normal; color: #1b1a3e; margin: 0; text-align: center;">
                         2</p>
                 </div>
                 <!-- Connector Line 2 -->
-                <div style="flex-grow: 1; height: 1px; background-color: #008aed; margin: 0 10px;"></div>
+                <div class="process-connector-line"></div>
                 <!-- Step 3 -->
-                <div
-                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border: 1px solid #008aed; border-radius: 37px; flex-shrink: 0;">
+                <div class="process-step-circle">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 42px; line-height: normal; color: #1b1a3e; margin: 0; text-align: center;">
                         3</p>
                 </div>
                 <!-- Connector Line 3 -->
-                <div style="flex-grow: 1; height: 1px; background-color: #008aed; margin: 0 10px;"></div>
+                <div class="process-connector-line"></div>
                 <!-- Step 4 -->
-                <div
-                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border: 1px solid #008aed; border-radius: 37px; flex-shrink: 0;">
+                <div class="process-step-circle">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 42px; line-height: normal; color: #1b1a3e; margin: 0; text-align: center;">
                         4</p>
                 </div>
                 <!-- Connector Line 4 -->
-                <div style="flex-grow: 1; height: 1px; background-color: #008aed; margin: 0 10px;"></div>
+                <div class="process-connector-line"></div>
                 <!-- Step 5 -->
-                <div
-                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 74px; height: 74px; border: 1px solid #008aed; border-radius: 37px; flex-shrink: 0;">
+                <div class="process-step-circle">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 42px; line-height: normal; color: #1b1a3e; margin: 0; text-align: center;">
                         5</p>
@@ -2063,10 +2216,9 @@
             </div>
 
             <!-- Step Cards Row -->
-            <div style="display: flex; gap: 20px; width: 100%;">
+            <div class="process-cards-row">
                 <!-- Card 1 -->
-                <div
-                    style="flex: 1; background-color: #e6e6ea; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 12px; height: 144px; text-align: center;">
+                <div class="process-card">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0;">
                         Submit a quote request</p>
@@ -2075,8 +2227,7 @@
                         with your team size.</p>
                 </div>
                 <!-- Card 2 -->
-                <div
-                    style="flex: 1; background-color: #e6e6ea; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 12px; height: 144px; text-align: center;">
+                <div class="process-card">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0;">
                         Receive volume pricing</p>
@@ -2085,8 +2236,7 @@
                         within 24 hours.</p>
                 </div>
                 <!-- Card 3 -->
-                <div
-                    style="flex: 1; background-color: #e6e6ea; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 12px; height: 144px; text-align: center;">
+                <div class="process-card">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0;">
                         Choose embroidery options</p>
@@ -2095,8 +2245,7 @@
                         (optional)</p>
                 </div>
                 <!-- Card 4 -->
-                <div
-                    style="flex: 1; background-color: #e6e6ea; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 12px; height: 144px; text-align: center;">
+                <div class="process-card">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0;">
                         Confirm sizes</p>
@@ -2105,8 +2254,7 @@
                         using our simple size chart.</p>
                 </div>
                 <!-- Card 5 -->
-                <div
-                    style="flex: 1; background-color: #e6e6ea; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; padding: 40px 20px; border-radius: 12px; height: 144px; text-align: center;">
+                <div class="process-card">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; color: #010028; margin: 0;">
                         Your coats ship quickly</p>
@@ -2131,11 +2279,10 @@
     <!-- ========================================
          OUTFIT YOUR TEAM SECTION - EXACT Figma Specs
          ======================================== -->
-    <section style="background-color: #FFFFFF; padding: 0 100px;">
-        <div
-            style="display: flex; align-items: center; justify-content: center; padding: 80px; border-radius: 20px; background: linear-gradient(125.455deg, rgba(2, 149, 255, 0.2) 4.08%, rgba(173, 133, 255, 0.2) 49.729%, rgba(8, 255, 225, 0.2) 97.72%), rgb(27, 26, 62);">
-            <div style="display: flex; flex: 1; gap: 20px; align-items: flex-end;">
-                <div style="display: flex; flex-direction: column; gap: 20px; flex: 1;">
+    <section class="outfit-team-section">
+        <div class="outfit-team-container">
+            <div class="outfit-team-inner">
+                <div class="outfit-team-text-col">
                     <p
                         style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 42px; line-height: normal; color: #e6e6ea; margin: 0;">
                         Outfit your entire team with lab coats that inspire confidence.</p>
